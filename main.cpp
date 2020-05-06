@@ -8,3 +8,9 @@ int main() {
 		spawn_mrówencja();
 	}
 }
+
+struct mruwa {
+	int hp;
+	int strenght;
+	char type;
+};
