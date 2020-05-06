@@ -10,7 +10,10 @@ int main() {
 }
 
 struct mruwa {
-	int hp;
-	int strenght;
-	char type;
+	char type;		//Typ mruwy
+	int hp;			//Aktualne HP danej mruwy
+	int maxhp;		//Maksymalne HP tej mruwy, za³ó¿my ¿e mrówka ka¿dego typu ma inne HP. Wojownik koks, robotnica a hita itd
+	int strenght;	//Si³a gryz¹cej mruwencji
+	int speed;		//Prêdkoœæ poruszania siê
+
 };
