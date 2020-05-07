@@ -1,7 +1,14 @@
 #include <iostream>
+#include <SFML/Graphics.hpp>
+
+using namespace std;
+using namespace sf;
 
 int main() {
-
+	
+	// Renderowanie okna gry
+	VideoMode vm(1920, 1080);
+	CreateWindow window(vm, "Age of Ants", Style::Fullscreen);
 }
 
 struct mruwa {
