@@ -5,6 +5,6 @@ Pawe³ Jakubowski:
 - utworzenie klasy Object i klasy Ant oraz wstêpnych atrybutów i metod (konstruktor, poruszanie siê na ekranie)
 - utworzenie wstêpnej tablicy mrówek w celu utworzenia mechaniki tworzenia wielu obiektów tej samej klasy po wciœniêciu odpowiedniego przycisku
 
-Do zrobienia: dodanie i zaaplikowanie kolizji do klasy Ant oraz podzia³ klas na poszczególne pliki .cpp i .h
+Do zrobienia: dodanie i zaaplikowanie kolizji do klasy Ant oraz podzia³ klas (Object i Ant) na poszczególne pliki .cpp i .h
 
 --------------------------------------------------------------------------------------------------------------------------- 

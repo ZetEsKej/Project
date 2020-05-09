@@ -1,4 +1,3 @@
-﻿  Timber.cpp
-F:\Proj\Timber\Timber.cpp(53,17): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
-F:\Proj\Timber\Timber.cpp(61,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-  Timber.vcxproj -> F:\Proj\Timber\Debug\Timber.exe
+﻿  main.cpp
+c:\users\pawełjakubowski\desktop\szkola\project\timber\main.cpp(40): warning C4305: "argument": obcięcie z "double" do "float"
+  Timber.vcxproj -> C:\Users\PawełJakubowski\Desktop\szkola\Project\Timber\Debug\Timber.exe
