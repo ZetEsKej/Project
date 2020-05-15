@@ -1,0 +1,138 @@
+﻿  Ant_Org.cpp
+D:\Ant_Org\Ant_Org\Game.cpp(6,22): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(23,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(24,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(25,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(27,22): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(29,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(29,31): error C2061: syntax error: identifier 'Game'
+D:\Ant_Org\Ant_Org\Game.cpp(31,11): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(31,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\Game.cpp(32,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(33,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(34,1): warning C4508: 'Game': function should return a value; 'void' return type assumed
+D:\Ant_Org\Ant_Org\Game.cpp(35,12): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(35,12): error C2523: '<Unknown>::~Game': destructor tag mismatch
+D:\Ant_Org\Ant_Org\Game.cpp(35,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\Game.cpp(35,15): error C2084: function 'int Game(void)' already has a body
+D:\Ant_Org\Ant_Org\Game.cpp(31): message : see previous definition of 'Game'
+D:\Ant_Org\Ant_Org\Game.cpp(36,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(38,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(39,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(40,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(47,20): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(50,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(50,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(52,18): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(55,24): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(58,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(58,40): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(60,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(61,17): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(66,18): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(68,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(70,8): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(71,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(71,36): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(75,18): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(77,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(78,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(79,13): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(79,40): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(82,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(85,15): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(87,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(89,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(90,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(91,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\GameState.h(6,1): error C2504: 'State': base class undefined
+D:\Ant_Org\Ant_Org\GameState.h(10,37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\GameState.h(10,37): warning C4183: 'GameState': missing return type; assumed to be a member function returning 'int'
+D:\Ant_Org\Ant_Org\GameState.h(11,20): error C2523: 'GamesState::~GameState': destructor tag mismatch
+D:\Ant_Org\Ant_Org\Game.h(24,13): error C2065: 'State': undeclared identifier
+D:\Ant_Org\Ant_Org\Game.h(24,19): error C2059: syntax error: '>'
+D:\Ant_Org\Ant_Org\Ant_Org.cpp(10,10): error C2146: syntax error: missing ';' before identifier 'game'
+D:\Ant_Org\Ant_Org\Ant_Org.cpp(10,10): error C2065: 'game': undeclared identifier
+D:\Ant_Org\Ant_Org\Ant_Org.cpp(12,5): error C2065: 'game': undeclared identifier
+  Game.cpp
+D:\Ant_Org\Ant_Org\Game.cpp(6,22): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(23,2): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(24,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(25,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(27,22): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(29,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(29,31): error C2061: syntax error: identifier 'Game'
+D:\Ant_Org\Ant_Org\Game.cpp(31,11): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(31,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\Game.cpp(32,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(33,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(34,1): warning C4508: 'Game': function should return a value; 'void' return type assumed
+D:\Ant_Org\Ant_Org\Game.cpp(35,12): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(35,12): error C2523: '<Unknown>::~Game': destructor tag mismatch
+D:\Ant_Org\Ant_Org\Game.cpp(35,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\Game.cpp(35,15): error C2084: function 'int Game(void)' already has a body
+D:\Ant_Org\Ant_Org\Game.cpp(31): message : see previous definition of 'Game'
+D:\Ant_Org\Ant_Org\Game.cpp(36,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(38,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(39,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(40,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(47,20): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(50,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(50,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(52,18): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(55,24): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(58,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(58,40): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(60,16): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(61,17): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(66,18): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(68,5): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(70,8): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(71,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(71,36): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(75,18): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(77,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(78,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(79,13): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(79,40): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(82,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(85,15): error C2653: 'Game': is not a class or namespace name
+D:\Ant_Org\Ant_Org\Game.cpp(87,12): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(89,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(90,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\Game.cpp(91,9): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers
+D:\Ant_Org\Ant_Org\GameState.h(6,1): error C2504: 'State': base class undefined
+D:\Ant_Org\Ant_Org\GameState.h(10,37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\GameState.h(10,37): warning C4183: 'GameState': missing return type; assumed to be a member function returning 'int'
+D:\Ant_Org\Ant_Org\GameState.h(11,20): error C2523: 'GamesState::~GameState': destructor tag mismatch
+D:\Ant_Org\Ant_Org\Game.h(24,13): error C2065: 'State': undeclared identifier
+D:\Ant_Org\Ant_Org\Game.h(24,19): error C2059: syntax error: '>'
+D:\Ant_Org\Ant_Org\Game.cpp(29,36): error C2064: term does not evaluate to a function taking 0 arguments
+D:\Ant_Org\Ant_Org\Game.cpp(29,47): error C2143: syntax error: missing ')' before ';'
+  GameState.cpp
+D:\Ant_Org\Ant_Org\Game.h(24,13): error C2065: 'State': undeclared identifier
+D:\Ant_Org\Ant_Org\Game.h(24,19): error C2059: syntax error: '>'
+D:\Ant_Org\Ant_Org\Game.cpp(29,36): error C2064: term does not evaluate to a function taking 0 arguments
+D:\Ant_Org\Ant_Org\Game.cpp(29,47): error C2143: syntax error: missing ')' before ';'
+D:\Ant_Org\Ant_Org\GameState.h(6,1): error C2504: 'State': base class undefined
+D:\Ant_Org\Ant_Org\GameState.h(10,37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\GameState.h(10,37): warning C4183: 'GameState': missing return type; assumed to be a member function returning 'int'
+D:\Ant_Org\Ant_Org\GameState.h(11,20): error C2523: 'GamesState::~GameState': destructor tag mismatch
+D:\Ant_Org\Ant_Org\GameState.cpp(3,21): error C2653: 'GameState': is not a class or namespace name
+D:\Ant_Org\Ant_Org\GameState.cpp(3,48): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\GameState.cpp(4,1): error C2550: 'GameState': constructor initializer lists are only allowed on constructor definitions
+D:\Ant_Org\Ant_Org\GameState.cpp(6,1): warning C4508: 'GameState': function should return a value; 'void' return type assumed
+D:\Ant_Org\Ant_Org\GameState.cpp(8,22): error C2653: 'GameState': is not a class or namespace name
+D:\Ant_Org\Ant_Org\GameState.cpp(8,22): error C2523: '<Unknown>::~GameState': destructor tag mismatch
+D:\Ant_Org\Ant_Org\GameState.cpp(8,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\GameState.cpp(10,1): warning C4508: 'GameState': function should return a value; 'void' return type assumed
+  state.cpp
+D:\Ant_Org\Ant_Org\GameState.h(6,1): error C2504: 'State': base class undefined
+D:\Ant_Org\Ant_Org\GameState.h(10,37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Ant_Org\Ant_Org\GameState.h(10,37): warning C4183: 'GameState': missing return type; assumed to be a member function returning 'int'
+D:\Ant_Org\Ant_Org\GameState.h(11,20): error C2523: 'GamesState::~GameState': destructor tag mismatch
+D:\Ant_Org\Ant_Org\Game.h(24,13): error C2065: 'State': undeclared identifier
+D:\Ant_Org\Ant_Org\Game.h(24,19): error C2059: syntax error: '>'
+D:\Ant_Org\Ant_Org\Game.cpp(29,36): error C2064: term does not evaluate to a function taking 0 arguments
+D:\Ant_Org\Ant_Org\Game.cpp(29,47): error C2143: syntax error: missing ')' before ';'
+  Generating Code...
