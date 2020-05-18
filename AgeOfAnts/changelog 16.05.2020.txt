@@ -72,13 +72,18 @@ Mateusz Osinski + Mikolaj Sarnecki:
 ---------------------------------------------------------------------------------------------------------------------------
 17.05.2020 
 
-Osiński + Sarnecki 
+Osiński + Sarnecki:
 - Wrzucenie stabilnej wersji menu, upiększenie menu,
 - zamysł koncepcji co do ustawień/exit + play
 - zamieszczenie na githubie. 
+
 ----------------------------------------------------------------------------------------------------------------------------
+
 18.05.2020
-Kamil Szymkowiak
--Stworzenie wstępnej wersji paska zdrowia dla bazy w klasie lifebar:(należy jeszcze poprawić długość dla obu baz oraz położenie dla bazy przeciwnika)
+
+Kamil Szymkowiak:
+- Stworzenie wstępnej wersji paska zdrowia dla bazy w klasie lifebar:(należy jeszcze poprawić długość dla obu baz oraz położenie dla bazy przeciwnika)
 Wrzucenie na github
 
+Jakub Stroiński:
+- Wprowadzenie statystyk dla wszystkich mrówek, które w przyszłości będą poddawane balansowi
