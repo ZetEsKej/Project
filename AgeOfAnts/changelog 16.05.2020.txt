@@ -37,6 +37,10 @@ Pawe³ Jakubowski:
 Mateusz Osinski + Mikolaj Sarnecki:
 - Tworzenie menu 
 - Dodawanie klas + pomysl na nie
+
+Jakub Stroiñski:
+- Zbudowanie od zera pe³nej kamery 2D z obs³ugiwaniem granic ekranu
+
 ---------------------------------------------------------------------------------------------------------------------------
 
 14.05.2020:
@@ -49,10 +53,12 @@ Mateusz Osinski + Mikolaj Sarnecki:
 - Stworzenie podstawy menu, 
 - Dodanie mozliwosci wyboru + ruszanie strzalkami 
 
--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 
 16.05.2020: 
 
 Mateusz Osinski + Mikolaj Sarnecki:
 - Wrzucenie menu - do poprawy zostal wyglad/estetyka 
 - Dzialaja wejscia uzytkownika, wybór, zmiana tla oraz czcionki 
+
+---------------------------------------------------------------------------------------------------------------------------
