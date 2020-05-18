@@ -1,0 +1,58 @@
+09.05.2020:
+
+Pawe³ Jakubowski:
+- naprawienie wyœwietlania okna na ekranie (nie crashuje po kilukrotnym klikniêciu myszk¹)
+- utworzenie klasy Object i klasy Ant oraz wstêpnych atrybutów i metod (konstruktor, poruszanie siê na ekranie)
+- utworzenie wstêpnej tablicy mrówek w celu utworzenia mechaniki tworzenia wielu obiektów tej samej klasy po wciœniêciu odpowiedniego przycisku
+
+--------------------------------------------------------------------------------------------------------------------------- 
+
+10.05.2020:
+
+Pawe³ Jakubowski:
+- wstêpna kolizja dla mrówki (trzeba bêdzie j¹ popawiæ po wgraniu ostatecznych modeli)
+- rozdzielenie dotychczas zrobionych klas na osobne pliki .cpp (jeszcze brak plików .h)
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- obmysl menu 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+12.05.2020:
+
+Pawe³ Jakubowski:
+- dokoñczenie prac nad kolizj¹ u mrówek
+- mrówki wiedz¹, w któr¹ stronê powinny iœæ, potrafi¹ siê zatrzymywaæ, kiedy jakaœ mrówka jest przed nimi
+- umieranie mrówek, gdy mrówka przestaje byæ aktywna (w przysz³oœci - gdy zostanie zabita)
+
+---------------------------------------------------------------------------------------------------------------------------
+
+13.05.2020:
+
+Pawe³ Jakubowski:
+- zaimplementowanie mechaniki ataku mrówki
+- dodanie klas zamku i gracza, dodanie klas poszczególnych typów mrówek (jeszcze bez statystyk)
+- mrówki potrafi¹ atakowaæ siê wzajemnie (atakowaæ wrogie mrówki) oraz atakowaæ zamek przeciwnika, gdy do niego dojd¹
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- Tworzenie menu 
+- Dodawanie klas + pomysl na nie
+---------------------------------------------------------------------------------------------------------------------------
+
+14.05.2020:
+
+Pawe³ Jakubowski:
+- zaimplementowanie animacji mrówek
+- modyfikacja klasy Lifebar i zaimplementowanie jej
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- Stworzenie podstawy menu, 
+- Dodanie mozliwosci wyboru + ruszanie strzalkami 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+16.05.2020: 
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- Wrzucenie menu - do poprawy zostal wyglad/estetyka 
+- Dzialaja wejscia uzytkownika, wybór, zmiana tla oraz czcionki 
