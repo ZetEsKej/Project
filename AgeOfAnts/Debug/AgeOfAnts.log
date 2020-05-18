@@ -1,0 +1,143 @@
+﻿  ant.cpp
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(62,16): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(63,14): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(66,16): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(67,14): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(69,1): warning C4305: "+=": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(80,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(83,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(96,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(109,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(119,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(129,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(139,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(155,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(157,1): warning C4244: "+=": konwersja z "double" do "int", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(163,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(165,1): warning C4244: "+=": konwersja z "double" do "int", możliwa utrata danych
+  ants.cpp
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(62,16): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(63,14): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(66,16): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(67,14): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(69,1): warning C4305: "+=": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(80,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(83,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(96,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(109,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(119,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(129,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(139,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(155,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(157,1): warning C4244: "+=": konwersja z "double" do "int", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(163,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(165,1): warning C4244: "+=": konwersja z "double" do "int", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(36,41): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(36,35): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(37,50): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(59,41): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(59,35): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(60,50): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(81,41): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(81,35): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(82,50): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+  castle.cpp
+  main.cpp
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(62,16): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(63,14): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(66,16): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(67,14): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(69,1): warning C4305: "+=": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(80,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(83,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(96,1): warning C4305: "argument": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(109,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(119,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(129,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(139,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(155,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(157,1): warning C4244: "+=": konwersja z "double" do "int", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(163,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ant.cpp(165,1): warning C4244: "+=": konwersja z "double" do "int", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(36,41): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(36,35): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(37,50): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(59,41): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(59,35): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(60,50): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(81,41): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(81,35): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\ants.cpp(82,50): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\lifebar.cpp(11,34): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\main.cpp(195,20): warning C4305: "+=": obcięcie z "double" do "float"
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\main.cpp(208,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\main.cpp(211,87): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\main.cpp(223,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\main.cpp(226,77): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\main.cpp(275,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+G:\ProjektProg\AgeOfAnts\AgeOfAnts\main.cpp(280,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  object.cpp
+  player.cpp
+  red_ant.cpp
+  Generowanie kodu...
+  AgeOfAnts.vcxproj -> G:\ProjektProg\AgeOfAnts\Debug\AgeOfAnts.exe
