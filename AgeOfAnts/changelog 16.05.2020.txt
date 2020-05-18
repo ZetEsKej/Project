@@ -87,3 +87,7 @@ Wrzucenie na github
 
 Jakub Stroiński:
 - Wprowadzenie statystyk dla wszystkich mrówek, które w przyszłości będą poddawane balansowi
+- Dodanie obramowania dla tekstu playersMoney
+- Dodanie pozostałych mrówek wraz z ich animacjami i przyciskami do ich wprowadzenia na mapę
+
+----------------------------------------------------------------------------------------------------------------------------
