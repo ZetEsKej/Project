@@ -53,25 +53,25 @@ int main() {
 	addAntButton_3.setTexture(textureAdd);
 	addAntButton_3.setPosition(500, 200);
 
-	//Sprite addAntButton_4;
-	//addAntButton_4.setTexture(textureAdd);
-	//addAntButton_4.setPosition(700, 200);
+	Sprite addAntButton_4;
+	addAntButton_4.setTexture(textureAdd);
+	addAntButton_4.setPosition(700, 200);
 
-	//Sprite addAntButton_5;
-	//addAntButton_5.setTexture(textureAdd);
-	//addAntButton_5.setPosition(900, 200);
+	Sprite addAntButton_5;
+	addAntButton_5.setTexture(textureAdd);
+	addAntButton_5.setPosition(900, 200);
 
-	//Sprite addAntButton_6;
-	//addAntButton_6.setTexture(textureAdd);
-	//addAntButton_6.setPosition(1100, 200);
+	Sprite addAntButton_6;
+	addAntButton_6.setTexture(textureAdd);
+	addAntButton_6.setPosition(1100, 200);
 
 	Texture textureAnt[8]; 	//Tworzenie tekstur mrowek
 	textureAnt[0].loadFromFile("graphics/animations/ant_ani_1.png");
 	textureAnt[1].loadFromFile("graphics/animations/ant_ani_2.png");
 	textureAnt[2].loadFromFile("graphics/animations/ant_ani_3.png");
 	textureAnt[3].loadFromFile("graphics/animations/ant_ani_4.png");
-	//textureAnt[4].loadFromFile("graphics/ant_ani_5.png");
-	//textureAnt[5].loadFromFile("graphics/ant_ani_6.png");
+	textureAnt[4].loadFromFile("graphics/animations/ant_ani_5.png");
+	textureAnt[5].loadFromFile("graphics/animations/ant_ani_6.png");
 
 	Player* player = new Player(true);
 	Player* opponentPlayer = new Player(false);
@@ -111,6 +111,9 @@ int main() {
 				addAntButton_1.move(-40.0f, 0);
 				addAntButton_2.move(-40.0f, 0);
 				addAntButton_3.move(-40.0f, 0);
+				addAntButton_4.move(-40.0f, 0);
+				addAntButton_5.move(-40.0f, 0);
+				addAntButton_6.move(-40.0f, 0);
 				playersMoney.move(-40.0f, 0);
 			}
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
@@ -120,6 +123,9 @@ int main() {
 				addAntButton_1.move(40.0f, 0);
 				addAntButton_2.move(40.0f, 0);
 				addAntButton_3.move(40.0f, 0);
+				addAntButton_4.move(40.0f, 0);
+				addAntButton_5.move(40.0f, 0);
+				addAntButton_6.move(40.0f, 0);
 				playersMoney.move(40.0f, 0);
 			}
 
@@ -133,8 +139,10 @@ int main() {
 
 
 			if (event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Left) {	// klikniêcie LPM
+
 				auto mouse_pos = Mouse::getPosition(window); // pozcja myszki wzglêdem okna
 				auto translated_pos = window.mapPixelToCoords(mouse_pos); // pozycja myszki w koordynatach globalnych
+
 				if (addAntButton_1.getGlobalBounds().contains(translated_pos)) { // porównanie koordynatów myszki z koordynatami przycisku dodawania mrówek -> czy wyst¹pi³o klikniêcie na przycisk addAnt
 
 					drawAnt = true;
@@ -187,6 +195,63 @@ int main() {
 
 						opponents.push_back(new Ant_l3(opponentPlayer));		// tworzenie mrówki przeciwnika
 						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[2]);
+						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
+						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
+
+					}
+				}
+				else if (addAntButton_4.getGlobalBounds().contains(translated_pos)) {	// czwarty przycisk dodawania mrówek
+
+					drawAnt = true;
+					if (player->money >= Ant::cost[3]) {		// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
+						ants.push_back(new Ant_l4(player));		// tworzenie mrówki
+						ants[ants.size() - 1]->sprite.setTexture(textureAnt[3]);
+						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
+						antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
+
+						/*std::cout << "Nasze jaja: " << player->money << std::endl;
+						std::cout << opponentPlayer->money << std::endl;*/
+
+						opponents.push_back(new Ant_l4(opponentPlayer));		// tworzenie mrówki przeciwnika
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[3]);
+						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
+						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
+
+					}
+				}
+				else if (addAntButton_5.getGlobalBounds().contains(translated_pos)) {	// piaty przycisk dodawania mrówek
+
+					drawAnt = true;
+					if (player->money >= Ant::cost[2]) {		// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
+						ants.push_back(new Ant_l5(player));		// tworzenie mrówki
+						ants[ants.size() - 1]->sprite.setTexture(textureAnt[4]);
+						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
+						antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
+
+						/*std::cout << "Nasze jaja: " << player->money << std::endl;
+						std::cout << opponentPlayer->money << std::endl;*/
+
+						opponents.push_back(new Ant_l5(opponentPlayer));		// tworzenie mrówki przeciwnika
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[4]);
+						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
+						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
+
+					}
+				}
+				else if (addAntButton_6.getGlobalBounds().contains(translated_pos)) {	// szosty przycisk dodawania mrówek
+
+					drawAnt = true;
+					if (player->money >= Ant::cost[5]) {		// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
+						ants.push_back(new Ant_l6(player));		// tworzenie mrówki
+						ants[ants.size() - 1]->sprite.setTexture(textureAnt[5]);
+						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
+						antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
+
+						/*std::cout << "Nasze jaja: " << player->money << std::endl;
+						std::cout << opponentPlayer->money << std::endl;*/
+
+						opponents.push_back(new Ant_l6(opponentPlayer));		// tworzenie mrówki przeciwnika
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[5]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
@@ -266,6 +331,9 @@ int main() {
 		window.draw(addAntButton_1);		// te trzy mrówki gracz mo¿e zakupiæ od samego pocz¹tku gry
 		window.draw(addAntButton_2);
 		window.draw(addAntButton_3);
+		window.draw(addAntButton_4);
+		window.draw(addAntButton_5);
+		window.draw(addAntButton_6);
 
 		//if (ourCastle->level >= 2) {			// te dwa ify sprawdzaj¹, czy zamek gracza ma odpowiedni poziom, aby móg³ zakupiæ inne mrówki
 		//	window.draw(addAntButton_4);
