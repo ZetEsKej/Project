@@ -10,20 +10,17 @@
 
 using namespace sf;
 
-unsigned int Ant::counter = 0;				// licznik mrówek obecnych na mapie
+unsigned int Ant::counter = 0;		// licznik mrówek obecnych na mapie
 unsigned int Ant::globalCounter = 0;		// licznik wszystkich mrówek, które kiedykolwiek zosta³y stworzone
-int Ant::cost[] = { 10, 15, 20, 25, 30, 35, 40, 50 };		// koszt zakupu mrówki na poszczególnych poziomach
+int Ant::cost[] = { 20, 35, 50, 75, 95, 120 };		// koszt zakupu mrówki na poszczególnych poziomach
 
 int main() {
 
 	VideoMode vm(1920, 1080);   //Tworzenie objektu videomode - tworzenie ekranu
 	RenderWindow window(vm, "Age Of Ants");  //Tworzenie i otwarcie okienka gry
 
-	View view = window.getDefaultView();
+	View view = window.getDefaultView(); //Kamera 2D
 	int boundaryControl = 0;  // kontrola wyjezdzania kamery za ekran
-
-	//View fixed = window.getView(); //Kamera 2D
-	//View scroll = fixed;
 
 	Texture textureBackground; //Przygotowanie tekstury tla
 	textureBackground.loadFromFile("graphics/backgrounds/background_blue_B.png"); //Za³adowanie tekstury t³a
@@ -31,7 +28,7 @@ int main() {
 	spriteBackground.setTexture(textureBackground);
 	spriteBackground.setPosition(0, 0);
 
-	Font font;					// czcionka
+	Font font;									// czcionka
 	font.loadFromFile("graphics/LEMONMILK-Medium.otf");
 	Text playersMoney("100", font);				// tekst z pieniêdzmi gracza
 	playersMoney.setCharacterSize(30);
@@ -48,10 +45,11 @@ int main() {
 	Sprite addAntButton_2;
 	addAntButton_2.setTexture(textureAdd);
 	addAntButton_2.setPosition(300, 200);
-	
+
 	Sprite addAntButton_3;
 	addAntButton_3.setTexture(textureAdd);
 	addAntButton_3.setPosition(500, 200);
+	// addAntButton_3.scale(0.5f, 0.5f);
 
 	Texture textureAnt[8]; 	//Tworzenie tekstur mrowek
 	textureAnt[0].loadFromFile("graphics/animations/ant_ani_1.png");
@@ -130,13 +128,13 @@ int main() {
 					drawAnt = true;
 					if (player->money >= Ant::cost[0]) {		// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
 						ants.push_back(new Ant_l1(player));		// tworzenie mrówki
-						ants[ants.size()-1]->sprite.setTexture(textureAnt[0]);
+						ants[ants.size() - 1]->sprite.setTexture(textureAnt[0]);
 						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, 147, 66));
-						antsLifebars.push_back(new Lifebar(ants[ants.size()-1]));
+						antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
 
 						//std::cout << "Nasze jaja: " << player->money << std::endl;
 						//std::cout << opponentPlayer->money << std::endl;
-			
+
 						opponents.push_back(new Ant_l1(opponentPlayer));		// tworzenie mrówki przeciwnika
 						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[0]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, 147, 66));
@@ -149,32 +147,32 @@ int main() {
 					drawAnt = true;
 					if (player->money >= Ant::cost[1]) {		// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
 						ants.push_back(new Ant_l2(player));		// tworzenie mrówki
-						ants[ants.size()-1]->sprite.setTexture(textureAnt[1]);
+						ants[ants.size() - 1]->sprite.setTexture(textureAnt[1]);
 						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
 						antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
 
 						/*std::cout << "Nasze jaja: " << player->money << std::endl;
 						std::cout << opponentPlayer->money << std::endl;*/
-			
+
 						opponents.push_back(new Ant_l2(opponentPlayer));		// tworzenie mrówki przeciwnika
 						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[1]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
 					}
-				}				
+				}
 				else if (addAntButton_3.getGlobalBounds().contains(translated_pos)) {	// trzeci przycisk dodawania mrówek
 
 					drawAnt = true;
 					if (player->money >= Ant::cost[2]) {		// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
 						ants.push_back(new Ant_l3(player));		// tworzenie mrówki
-						ants[ants.size()-1]->sprite.setTexture(textureAnt[2]);
+						ants[ants.size() - 1]->sprite.setTexture(textureAnt[2]);
 						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
 						antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
 
 						/*std::cout << "Nasze jaja: " << player->money << std::endl;
 						std::cout << opponentPlayer->money << std::endl;*/
-			
+
 						opponents.push_back(new Ant_l3(opponentPlayer));		// tworzenie mrówki przeciwnika
 						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[2]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
@@ -236,7 +234,7 @@ int main() {
 							}
 						}
 					}
-						antsLifebars[i]->updateLifebar(ants[i]);
+					antsLifebars[i]->updateLifebar(ants[i]);
 				}
 
 			}
