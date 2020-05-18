@@ -1,17 +1,17 @@
 09.05.2020:
 
-Pawe³ Jakubowski:
-- naprawienie wyœwietlania okna na ekranie (nie crashuje po kilukrotnym klikniêciu myszk¹)
-- utworzenie klasy Object i klasy Ant oraz wstêpnych atrybutów i metod (konstruktor, poruszanie siê na ekranie)
-- utworzenie wstêpnej tablicy mrówek w celu utworzenia mechaniki tworzenia wielu obiektów tej samej klasy po wciœniêciu odpowiedniego przycisku
+PaweÅ‚ Jakubowski:
+- naprawienie wyÅ›wietlania okna na ekranie (nie crashuje po kilukrotnym klikniÄ™ciu myszkÄ…)
+- utworzenie klasy Object i klasy Ant oraz wstÄ™pnych atrybutÃ³w i metod (konstruktor, poruszanie siÄ™ na ekranie)
+- utworzenie wstÄ™pnej tablicy mrÃ³wek w celu utworzenia mechaniki tworzenia wielu obiektÃ³w tej samej klasy po wciÅ›niÄ™ciu odpowiedniego przycisku
 
 --------------------------------------------------------------------------------------------------------------------------- 
 
 10.05.2020:
 
-Pawe³ Jakubowski:
-- wstêpna kolizja dla mrówki (trzeba bêdzie j¹ popawiæ po wgraniu ostatecznych modeli)
-- rozdzielenie dotychczas zrobionych klas na osobne pliki .cpp (jeszcze brak plików .h)
+PaweÅ‚ Jakubowski:
+- wstÄ™pna kolizja dla mrÃ³wki (trzeba bÄ™dzie jÄ… popawiÄ‡ po wgraniu ostatecznych modeli)
+- rozdzielenie dotychczas zrobionych klas na osobne pliki .cpp (jeszcze brak plikÃ³w .h)
 
 Mateusz Osinski + Mikolaj Sarnecki:
 - obmysl menu 
@@ -20,33 +20,41 @@ Mateusz Osinski + Mikolaj Sarnecki:
 
 12.05.2020:
 
-Pawe³ Jakubowski:
-- dokoñczenie prac nad kolizj¹ u mrówek
-- mrówki wiedz¹, w któr¹ stronê powinny iœæ, potrafi¹ siê zatrzymywaæ, kiedy jakaœ mrówka jest przed nimi
-- umieranie mrówek, gdy mrówka przestaje byæ aktywna (w przysz³oœci - gdy zostanie zabita)
+PaweÅ‚ Jakubowski:
+- dokoÅ„czenie prac nad kolizjÄ… u mrÃ³wek
+- mrÃ³wki wiedzÄ…, w ktÃ³rÄ… stronÄ™ powinny iÅ›Ä‡, potrafiÄ… siÄ™ zatrzymywaÄ‡, kiedy jakaÅ› mrÃ³wka jest przed nimi
+- umieranie mrÃ³wek, gdy mrÃ³wka przestaje byÄ‡ aktywna (w przyszÅ‚oÅ›ci - gdy zostanie zabita)
+
+Kamil Szymkowiak:
+-WstÄ™pne prace nad kamerÄ… 2D:
+DziaÅ‚a poruszanie w lewo i prawo ale nie zatrzymuje siÄ™ jeszcze na koÅ„cu tÅ‚a
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 
 13.05.2020:
 
-Pawe³ Jakubowski:
-- zaimplementowanie mechaniki ataku mrówki
-- dodanie klas zamku i gracza, dodanie klas poszczególnych typów mrówek (jeszcze bez statystyk)
-- mrówki potrafi¹ atakowaæ siê wzajemnie (atakowaæ wrogie mrówki) oraz atakowaæ zamek przeciwnika, gdy do niego dojd¹
+PaweÅ‚ Jakubowski:
+- zaimplementowanie mechaniki ataku mrÃ³wki
+- dodanie klas zamku i gracza, dodanie klas poszczegÃ³lnych typÃ³w mrÃ³wek (jeszcze bez statystyk)
+- mrÃ³wki potrafiÄ… atakowaÄ‡ siÄ™ wzajemnie (atakowaÄ‡ wrogie mrÃ³wki) oraz atakowaÄ‡ zamek przeciwnika, gdy do niego dojdÄ…
 
 Mateusz Osinski + Mikolaj Sarnecki:
 - Tworzenie menu 
 - Dodawanie klas + pomysl na nie
 
-Jakub Stroiñski:
-- Zbudowanie od zera pe³nej kamery 2D z obs³ugiwaniem granic ekranu
+Jakub StroiÅ„ski:
+- Zbudowanie od zera peÅ‚nej kamery 2D z obsÅ‚ugiwaniem granic ekranu
+
+Kamil Szymkowiak:
+Stworzenie wstÄ™pnej klasy lifebar z testowymi wartoÅ›ciami
 
 ---------------------------------------------------------------------------------------------------------------------------
 
 14.05.2020:
 
-Pawe³ Jakubowski:
-- zaimplementowanie animacji mrówek
+PaweÅ‚ Jakubowski:
+- zaimplementowanie animacji mrÃ³wek
 - modyfikacja klasy Lifebar i zaimplementowanie jej
 
 Mateusz Osinski + Mikolaj Sarnecki:
@@ -59,6 +67,18 @@ Mateusz Osinski + Mikolaj Sarnecki:
 
 Mateusz Osinski + Mikolaj Sarnecki:
 - Wrzucenie menu - do poprawy zostal wyglad/estetyka 
-- Dzialaja wejscia uzytkownika, wybór, zmiana tla oraz czcionki 
+- Dzialaja wejscia uzytkownika, wybÃ³r, zmiana tla oraz czcionki 
 
 ---------------------------------------------------------------------------------------------------------------------------
+17.05.2020 
+
+OsiÅ„ski + Sarnecki 
+- Wrzucenie stabilnej wersji menu, upiÄ™kszenie menu,
+- zamysÅ‚ koncepcji co do ustawieÅ„/exit + play
+- zamieszczenie na githubie. 
+----------------------------------------------------------------------------------------------------------------------------
+18.05.2020
+Kamil Szymkowiak
+-Stworzenie wstÄ™pnej wersji paska zdrowia dla bazy w klasie lifebar:(naleÅ¼y jeszcze poprawiÄ‡ dÅ‚ugoÅ›Ä‡ dla obu baz oraz poÅ‚oÅ¼enie dla bazy przeciwnika)
+Wrzucenie na github
+
