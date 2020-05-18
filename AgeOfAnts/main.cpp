@@ -34,10 +34,13 @@ int main() {
 	playersMoney.setCharacterSize(30);
 	playersMoney.setStyle(sf::Text::Bold);
 	playersMoney.setFillColor(sf::Color::White);
+	playersMoney.setOutlineThickness(2);
+	playersMoney.setOutlineColor(sf::Color::Black);
 	playersMoney.setPosition(50, 50);
 
 	Texture textureAdd;
 	textureAdd.loadFromFile("graphics/add.png");
+
 	Sprite addAntButton_1;
 	addAntButton_1.setTexture(textureAdd);
 	addAntButton_1.setPosition(100, 200);
@@ -49,7 +52,18 @@ int main() {
 	Sprite addAntButton_3;
 	addAntButton_3.setTexture(textureAdd);
 	addAntButton_3.setPosition(500, 200);
-	// addAntButton_3.scale(0.5f, 0.5f);
+
+	//Sprite addAntButton_4;
+	//addAntButton_4.setTexture(textureAdd);
+	//addAntButton_4.setPosition(700, 200);
+
+	//Sprite addAntButton_5;
+	//addAntButton_5.setTexture(textureAdd);
+	//addAntButton_5.setPosition(900, 200);
+
+	//Sprite addAntButton_6;
+	//addAntButton_6.setTexture(textureAdd);
+	//addAntButton_6.setPosition(1100, 200);
 
 	Texture textureAnt[8]; 	//Tworzenie tekstur mrowek
 	textureAnt[0].loadFromFile("graphics/animations/ant_ani_1.png");
@@ -58,8 +72,6 @@ int main() {
 	textureAnt[3].loadFromFile("graphics/animations/ant_ani_4.png");
 	//textureAnt[4].loadFromFile("graphics/ant_ani_5.png");
 	//textureAnt[5].loadFromFile("graphics/ant_ani_6.png");
-	//textureAnt[6].loadFromFile("graphics/ant_ani_7.png");
-	//textureAnt[6].loadFromFile("graphics/ant_ani_8.png");
 
 	Player* player = new Player(true);
 	Player* opponentPlayer = new Player(false);
