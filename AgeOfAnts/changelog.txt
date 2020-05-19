@@ -98,5 +98,6 @@ Jakub Stroiński:
 - Wyrównanie spawnu mrówek i ich przesuwania do płaskiego podłoża na podmienionych już tłach
 - Wymiana wstępnego UI na nowe + jego ustawienie
 - Dodanie odwróconych modeli mrówek (dla przeciwników) i zaaplikowanie ich w kodzie
+- Wstępna praca nad systemem ulepszania mrowiska oraz audio gry
 
 ----------------------------------------------------------------------------------------------------------------------------
