@@ -12,7 +12,7 @@ using namespace sf;
 
 unsigned int Ant::counter = 0;		// licznik mrówek obecnych na mapie
 unsigned int Ant::globalCounter = 0;		// licznik wszystkich mrówek, które kiedykolwiek zosta³y stworzone
-int Ant::cost[] = { 20, 35, 50, 75, 95, 120 };		// koszt zakupu mrówki na poszczególnych poziomach
+int Ant::cost[] = { 20, 35, 50, 75, 1 /*95*/, 1 /*120*/ };		// koszt zakupu mrówki na poszczególnych poziomach
 
 int main() {
 

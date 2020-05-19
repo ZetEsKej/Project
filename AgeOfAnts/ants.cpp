@@ -35,7 +35,7 @@ public:
 		height = 94;
 
 		rect.setSize(sf::Vector2f(width - 15, height));
-		sprite.setPosition(sprite.getPosition().x, 985 - height);
+		sprite.setPosition(sprite.getPosition().x, 995 - height);
 		rect.setPosition(sprite.getPosition());
 	}
 };
@@ -51,10 +51,10 @@ public:
 		movementSpeed = 0.14;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 263;
-		height = 98;
+		height = 112; /*98*/
 
 		rect.setSize(sf::Vector2f(width - 15, height));
-		sprite.setPosition(sprite.getPosition().x, 985 - height);
+		sprite.setPosition(sprite.getPosition().x, 990 - height);
 		rect.setPosition(sprite.getPosition());
 
 	}
@@ -94,7 +94,7 @@ public:
 		height = 103;
 
 		rect.setSize(sf::Vector2f(width - 15, height));
-		sprite.setPosition(sprite.getPosition().x, 985 - height);
+		sprite.setPosition(sprite.getPosition().x, 995 - height);
 		rect.setPosition(sprite.getPosition());
 	}
 };
@@ -113,7 +113,7 @@ public:
 		height = 201;
 
 		rect.setSize(sf::Vector2f(width - 15, height));
-		sprite.setPosition(sprite.getPosition().x, 985 - height);
+		sprite.setPosition(sprite.getPosition().x, 1005 - height);
 		rect.setPosition(sprite.getPosition());
 	}
 };
