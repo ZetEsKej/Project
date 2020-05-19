@@ -5,6 +5,10 @@ Paweł Jakubowski:
 - utworzenie klasy Object i klasy Ant oraz wstępnych atrybutów i metod (konstruktor, poruszanie się na ekranie)
 - utworzenie wstępnej tablicy mrówek w celu utworzenia mechaniki tworzenia wielu obiektów tej samej klasy po wciśnięciu odpowiedniego przycisku
 
+Klaudiusz Rozenek:
+- Dodanie statycznych modeli mrówek
+- Dodanie 14 motywów mapy
+
 --------------------------------------------------------------------------------------------------------------------------- 
 
 10.05.2020:
@@ -61,6 +65,10 @@ Mateusz Osinski + Mikolaj Sarnecki:
 - Stworzenie podstawy menu, 
 - Dodanie mozliwosci wyboru + ruszanie strzalkami 
 
+Klaudiusz Rozenek:
+- Dodanie 3 spritesheetów potrzebnych do animacji mrówek
+- Dodano motywu menu
+
 ---------------------------------------------------------------------------------------------------------------------------
 
 16.05.2020: 
@@ -90,6 +98,12 @@ Jakub Stroiński:
 - Dodanie obramowania dla tekstu playersMoney
 - Dodanie pozostałych mrówek wraz z ich animacjami i przyciskami do ich wprowadzenia na mapę
 
+Klaudiusz Rozenek:
+- Podmiana map - zmiana podłoża z górskiego na płaskie
+- Dodanie grafik odwróconych modeli mrówek
+- Dodanie pasków kolorów potrzebnych do stworzenia menu wyboru motywu
+- Dodanie 3 spritesheetów potrzebnych do animacji
+
 ----------------------------------------------------------------------------------------------------------------------------
 
 19.05.2020
@@ -103,5 +117,8 @@ Jakub Stroiński:
 Kamil Szymkowiak:
 -Działający Lifebar dla obu zamków(trzeba jeszcze ustawić jego usuwanie przy końcu gry)
 -Dodano brakujący wpis do main dzięki czmu mrówki przeciwnika mogą attakować nasz zamek
+
+Klaudiusz Rozenek:
+- Dodanie pierwszych przycisków do UI
 
 ----------------------------------------------------------------------------------------------------------------------------
