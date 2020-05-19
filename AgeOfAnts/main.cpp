@@ -114,7 +114,7 @@ int main() {
 	std::vector<Lifebar*> opponentsLifebars;
 
 	Lifebar* lifeBarCastle = new Lifebar(ourCastle);	//pasek zdrowia zamku gracza
-	Lifebar* lifeBarOpponentCastle = new Lifebar(opponentsCastle); //pasek zdrowia zamku wroga
+	Lifebar* lifeBarOpponentCastle = new Lifebar(opponentsCastle);
 
 	bool drawAnt = false;
 	float addMoney = 0.0;			// wartoœæ do liczenia czasu (player dostaje dodatkowe jaja co jakiœ czas)
@@ -324,7 +324,7 @@ int main() {
 						}
 					}
 					opponentsLifebars[i]->updateLifebar(opponents[i]);
-					lifeBarOpponentCastle->updateLifebar(ourCastle);
+					lifeBarCastle->updateLifebar(ourCastle);
 				}
 				for (int i = 0; i < ants.size(); i++) {
 					ants[i]->isMoving = ants[i]->checkForCollision(ants, opponents, opponentsCastle);
@@ -343,7 +343,7 @@ int main() {
 						}
 					}
 					antsLifebars[i]->updateLifebar(ants[i]);
-					lifeBarCastle->updateLifebar(ourCastle);
+					lifeBarOpponentCastle->updateLifebar(opponentsCastle);
 				}
 
 			}
@@ -368,8 +368,8 @@ int main() {
 		window.draw(addAntButton_5);
 		window.draw(addAntButton_6);
 
-		window.draw(lifeBarCastle->rect);
-		window.draw(lifeBarOpponentCastle->rect);
+		window.draw(lifeBarCastle->lifeBar_castle);
+		window.draw(lifeBarOpponentCastle->lifeBar_castle);
 		//if (ourCastle->level >= 2) {		// te dwa ify sprawdzaj¹, czy zamek gracza ma odpowiedni poziom, aby móg³ zakupiæ inne mrówki
 		//	window.draw(addAntButton_4);
 		//	window.draw(addAntButton_5);

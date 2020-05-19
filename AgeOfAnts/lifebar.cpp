@@ -5,6 +5,7 @@ class Lifebar : public Object
 
 public:
 	sf::RectangleShape lifeBar_ant;
+	sf::RectangleShape lifeBar_castle;
 	Lifebar(Ant* ant)	//konstruktor 
 	{
 		rect.setFillColor(sf::Color::Red);
@@ -12,11 +13,12 @@ public:
 		rect.setPosition(ant->rect.getPosition().x + 50, ant->rect.getPosition().y + ant->rect.getSize().y + 20);		// umieszczenie paska nad mrówk¹
 
 	}
-	Lifebar(Castle* castle) //konstruktor dla zamku
+	Lifebar(Castle* castle)	//konstruktor 
 	{
-		rect.setFillColor(sf::Color::Magenta);
-		rect.setSize(sf::Vector2f(0.001 * castle->hp, 5));
-		rect.setPosition(castle->rect.getPosition().x + 50, castle->rect.getPosition().y + castle->rect.getSize().y + 20);	//testowe wartoœci skopiowane z paska dla mrówek
+		lifeBar_castle.setFillColor(sf::Color::Magenta);
+		lifeBar_castle.setSize(sf::Vector2f(0.005 * castle->hp, 5));
+		lifeBar_castle.setPosition(castle->rect.getPosition().x + 50, castle->rect.getPosition().y + castle->rect.getSize().y + 20);		// umieszczenie paska nad mrówk¹
+
 	}
 	~Lifebar()	//destruktor
 	{}
@@ -30,13 +32,13 @@ public:
 			rect.setSize(sf::Vector2f(3.0f, 5.0f));
 		}
 	}
-	void updateLifebar(Castle* castle)
+	void updateLifebar(Castle* castle)	//aktualzacja paska zdrowia
 	{
-		rect.setSize(sf::Vector2f(0.001f * castle->hp, 5.0f));
-		rect.setPosition(castle->rect.getPosition().x + 50, castle->rect.getPosition().y + castle->rect.getSize().y + 20);		// umieszczenie paska nad mrówk¹
+		lifeBar_castle.setSize(sf::Vector2f(0.005f * castle->hp, 5.0f));
+		lifeBar_castle.setPosition(castle->rect.getPosition().x + 50, castle->rect.getPosition().y + castle->rect.getSize().y + 20);		// umieszczenie paska nad mrówk¹
 
-		if (rect.getSize().x < 3) {						// gdy hp jest bardzo niskie, pasek staje siê niewidoczny. Ta funkcja sprawia, ¿e ma on chocia¿ minimaln¹ gruboœæ
-			rect.setSize(sf::Vector2f(3.0f, 5.0f));
+		if (lifeBar_castle.getSize().x < 3) {						// gdy hp jest bardzo niskie, pasek staje siê niewidoczny. Ta funkcja sprawia, ¿e ma on chocia¿ minimaln¹ gruboœæ
+			lifeBar_castle.setSize(sf::Vector2f(3.0f, 5.0f));
 		}
 	}
 };
