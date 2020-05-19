@@ -83,13 +83,19 @@ int main() {
 	addAntButton_6.setTexture(textureAdd_6);
 	addAntButton_6.setPosition(450, 90);
 
-	Texture textureAnt[8]; 			//Tworzenie tekstur mrowek
+	Texture textureAnt[12]; 			//Tworzenie tekstur mrowek
 	textureAnt[0].loadFromFile("graphics/animations/ant_ani_1.png");
 	textureAnt[1].loadFromFile("graphics/animations/ant_ani_2.png");
 	textureAnt[2].loadFromFile("graphics/animations/ant_ani_3.png");
 	textureAnt[3].loadFromFile("graphics/animations/ant_ani_4.png");
 	textureAnt[4].loadFromFile("graphics/animations/ant_ani_5.png");
 	textureAnt[5].loadFromFile("graphics/animations/ant_ani_6.png");
+	textureAnt[6].loadFromFile("graphics/enemy_animations/enemy_ani_1.png"); 
+	textureAnt[7].loadFromFile("graphics/enemy_animations/enemy_ani_2.png"); 
+	textureAnt[8].loadFromFile("graphics/enemy_animations/enemy_ani_3.png");
+	textureAnt[9].loadFromFile("graphics/enemy_animations/enemy_ani_4.png"); 
+	textureAnt[10].loadFromFile("graphics/enemy_animations/enemy_ani_5.png");
+	textureAnt[11].loadFromFile("graphics/enemy_animations/enemy_ani_6.png");
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA ZMIENNYCH / TABLIC -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -178,7 +184,7 @@ int main() {
 						//std::cout << opponentPlayer->money << std::endl;
 
 						opponents.push_back(new Ant_l1(opponentPlayer));	// tworzenie mrówki przeciwnika
-						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[0]);
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[6]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, 147, 66));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
@@ -197,7 +203,7 @@ int main() {
 						std::cout << opponentPlayer->money << std::endl;*/
 
 						opponents.push_back(new Ant_l2(opponentPlayer));	// tworzenie mrówki przeciwnika
-						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[1]);
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[7]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
@@ -216,7 +222,7 @@ int main() {
 						std::cout << opponentPlayer->money << std::endl;*/
 
 						opponents.push_back(new Ant_l3(opponentPlayer));	// tworzenie mrówki przeciwnika
-						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[2]);
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[8]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
@@ -235,7 +241,7 @@ int main() {
 						std::cout << opponentPlayer->money << std::endl;*/
 
 						opponents.push_back(new Ant_l4(opponentPlayer));	// tworzenie mrówki przeciwnika
-						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[3]);
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[9]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
@@ -254,7 +260,7 @@ int main() {
 						std::cout << opponentPlayer->money << std::endl;*/
 
 						opponents.push_back(new Ant_l5(opponentPlayer));	// tworzenie mrówki przeciwnika
-						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[4]);
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[10]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
@@ -273,7 +279,7 @@ int main() {
 						std::cout << opponentPlayer->money << std::endl;*/
 
 						opponents.push_back(new Ant_l6(opponentPlayer));	// tworzenie mrówki przeciwnika
-						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[5]);
+						opponents[opponents.size() - 1]->sprite.setTexture(textureAnt[11]);
 						opponents[opponents.size() - 1]->sprite.setTextureRect(IntRect(0, 0, opponents[opponents.size() - 1]->width, opponents[opponents.size() - 1]->height));
 						opponentsLifebars.push_back(new Lifebar(opponents[opponents.size() - 1]));
 
