@@ -1,0 +1,101 @@
+09.05.2020:
+
+Paweł Jakubowski:
+- naprawienie wyświetlania okna na ekranie (nie crashuje po kilukrotnym kliknięciu myszką)
+- utworzenie klasy Object i klasy Ant oraz wstępnych atrybutów i metod (konstruktor, poruszanie się na ekranie)
+- utworzenie wstępnej tablicy mrówek w celu utworzenia mechaniki tworzenia wielu obiektów tej samej klasy po wciśnięciu odpowiedniego przycisku
+
+--------------------------------------------------------------------------------------------------------------------------- 
+
+10.05.2020:
+
+Paweł Jakubowski:
+- wstępna kolizja dla mrówki (trzeba będzie ją popawić po wgraniu ostatecznych modeli)
+- rozdzielenie dotychczas zrobionych klas na osobne pliki .cpp (jeszcze brak plików .h)
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- obmysl menu 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+12.05.2020:
+
+Paweł Jakubowski:
+- dokończenie prac nad kolizją u mrówek
+- mrówki wiedzą, w którą stronę powinny iść, potrafią się zatrzymywać, kiedy jakaś mrówka jest przed nimi
+- umieranie mrówek, gdy mrówka przestaje być aktywna (w przyszłości - gdy zostanie zabita)
+
+Kamil Szymkowiak:
+-Wstępne prace nad kamerą 2D:
+Działa poruszanie w lewo i prawo ale nie zatrzymuje się jeszcze na końcu tła
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+13.05.2020:
+
+Paweł Jakubowski:
+- zaimplementowanie mechaniki ataku mrówki
+- dodanie klas zamku i gracza, dodanie klas poszczególnych typów mrówek (jeszcze bez statystyk)
+- mrówki potrafią atakować się wzajemnie (atakować wrogie mrówki) oraz atakować zamek przeciwnika, gdy do niego dojdą
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- Tworzenie menu 
+- Dodawanie klas + pomysl na nie
+
+Jakub Stroiński:
+- Zbudowanie od zera pełnej kamery 2D z obsługiwaniem granic ekranu
+
+Kamil Szymkowiak:
+Stworzenie wstępnej klasy lifebar z testowymi wartościami
+
+---------------------------------------------------------------------------------------------------------------------------
+
+14.05.2020:
+
+Paweł Jakubowski:
+- zaimplementowanie animacji mrówek
+- modyfikacja klasy Lifebar i zaimplementowanie jej
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- Stworzenie podstawy menu, 
+- Dodanie mozliwosci wyboru + ruszanie strzalkami 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+16.05.2020: 
+
+Mateusz Osinski + Mikolaj Sarnecki:
+- Wrzucenie menu - do poprawy zostal wyglad/estetyka 
+- Dzialaja wejscia uzytkownika, wybór, zmiana tla oraz czcionki 
+
+---------------------------------------------------------------------------------------------------------------------------
+17.05.2020 
+
+Osiński + Sarnecki:
+- Wrzucenie stabilnej wersji menu, upiększenie menu,
+- zamysł koncepcji co do ustawień/exit + play
+- zamieszczenie na githubie. 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+18.05.2020
+
+Kamil Szymkowiak:
+- Stworzenie wstępnej wersji paska zdrowia dla bazy w klasie lifebar:(należy jeszcze poprawić długość dla obu baz oraz położenie dla bazy przeciwnika)
+Wrzucenie na github
+
+Jakub Stroiński:
+- Wprowadzenie statystyk dla wszystkich mrówek, które w przyszłości będą poddawane balansowi
+- Dodanie obramowania dla tekstu playersMoney
+- Dodanie pozostałych mrówek wraz z ich animacjami i przyciskami do ich wprowadzenia na mapę
+
+----------------------------------------------------------------------------------------------------------------------------
+
+19.05.2020
+
+Jakub Stroiński:
+- Wyrównanie spawnu mrówek i ich przesuwania do płaskiego podłoża na podmienionych już tłach
+- Wymiana wstępnego UI na nowe + jego ustawienie
+
+----------------------------------------------------------------------------------------------------------------------------
