@@ -34,7 +34,7 @@ int main() {
 	textureEggs.loadFromFile("graphics/UI/jajco.png");
 	Sprite spriteEggs;
 	spriteEggs.setTexture(textureEggs);
-	spriteEggs.setPosition(50, 54);
+	spriteEggs.setPosition(50, 44);
 
 	Font font;											// czcionka
 	font.loadFromFile("graphics/LEMONMILK-Medium.otf");
@@ -44,7 +44,7 @@ int main() {
 	playersMoney.setFillColor(sf::Color::White);
 	playersMoney.setOutlineThickness(2);
 	playersMoney.setOutlineColor(sf::Color::Black);
-	playersMoney.setPosition(85, 50);
+	playersMoney.setPosition(85, 40);
 
 	Texture textureAdd_1;
 	textureAdd_1.loadFromFile("graphics/UI/UI_1.png");
