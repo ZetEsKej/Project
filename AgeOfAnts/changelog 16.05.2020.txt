@@ -91,3 +91,11 @@ Jakub Stroiński:
 - Dodanie pozostałych mrówek wraz z ich animacjami i przyciskami do ich wprowadzenia na mapę
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+19.05.2020
+
+Jakub Stroiński:
+- Wyrównanie spawnu mrówek i ich przesuwania do płaskiego podłoża na podmienionych już tłach
+- Wymiana wstępnego UI na nowe + jego ustawienie
+
+----------------------------------------------------------------------------------------------------------------------------
