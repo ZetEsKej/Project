@@ -12,7 +12,7 @@ using namespace sf;
 
 unsigned int Ant::counter = 0;		// licznik mrówek obecnych na mapie
 unsigned int Ant::globalCounter = 0;		// licznik wszystkich mrówek, które kiedykolwiek zosta³y stworzone
-int Ant::cost[] = { 20, 35, 50, 75, 1 /*95*/, 1 /*120*/ };		// koszt zakupu mrówki na poszczególnych poziomach
+int Ant::cost[] = { 20, 35, 50, 75, 95, 120 };		// koszt zakupu mrówki na poszczególnych poziomach
 
 int main() {
 
@@ -28,12 +28,11 @@ int main() {
 	spriteBackground.setTexture(textureBackground);
 	spriteBackground.setPosition(0, 0);
 
-	Texture textureCoins;
-	textureCoins.loadFromFile("graphics/UI/coins.png");
-	Sprite spriteCoins;
-	spriteCoins.setTexture(textureCoins);
-	spriteCoins.scale(0.02, 0.02);
-	spriteCoins.setPosition(100, 30);
+	Texture textureEggs;
+	textureEggs.loadFromFile("graphics/UI/jajco.png");
+	Sprite spriteEggs;
+	spriteEggs.setTexture(textureEggs);
+	spriteEggs.setPosition(50, 54);
 
 	Font font;									// czcionka
 	font.loadFromFile("graphics/LEMONMILK-Medium.otf");
@@ -43,7 +42,7 @@ int main() {
 	playersMoney.setFillColor(sf::Color::White);
 	playersMoney.setOutlineThickness(2);
 	playersMoney.setOutlineColor(sf::Color::Black);
-	playersMoney.setPosition(50, 50);
+	playersMoney.setPosition(85, 50);
 
 	Texture textureAdd_1;
 	textureAdd_1.loadFromFile("graphics/UI/UI_1.png");
@@ -132,6 +131,7 @@ int main() {
 				addAntButton_5.move(-40.0f, 0);
 				addAntButton_6.move(-40.0f, 0);
 				playersMoney.move(-40.0f, 0);
+				spriteEggs.move(-40.0f, 0);
 			}
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
 				boundaryControl++;
@@ -144,6 +144,7 @@ int main() {
 				addAntButton_5.move(40.0f, 0);
 				addAntButton_6.move(40.0f, 0);
 				playersMoney.move(40.0f, 0);
+				spriteEggs.move(40.0f, 0);
 			}
 
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {		// pauzowanie gry po wciœniêciu klawisza ESC
@@ -343,7 +344,7 @@ int main() {
 
 		window.draw(spriteBackground);  //Rysowanie sceny gry
 
-		window.draw(spriteCoins);		 // rysowanie UI
+		window.draw(spriteEggs);		 // rysowanie UI
 		window.draw(playersMoney);
 
 		window.draw(addAntButton_1);		// te trzy mrówki gracz mo¿e zakupiæ od samego pocz¹tku gry
