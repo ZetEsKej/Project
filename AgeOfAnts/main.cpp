@@ -46,6 +46,12 @@ int main() {
 	playersMoney.setOutlineColor(sf::Color::Black);
 	playersMoney.setPosition(85, 40);
 
+	//Texture textureUpgrade;
+	//textureUpgrade.loadFromFile("graphics/UI/UI_6.png");
+	//Sprite spriteUpgrade;
+	//spriteUpgrade.setTexture(textureUpgrade);
+	//spriteUpgrade.setPosition(960, 50);
+
 	Texture textureAdd_1;
 	textureAdd_1.loadFromFile("graphics/UI/UI_1.png");
 	Texture textureAdd_2;
@@ -90,10 +96,10 @@ int main() {
 	textureAnt[3].loadFromFile("graphics/animations/ant_ani_4.png");
 	textureAnt[4].loadFromFile("graphics/animations/ant_ani_5.png");
 	textureAnt[5].loadFromFile("graphics/animations/ant_ani_6.png");
-	textureAnt[6].loadFromFile("graphics/enemy_animations/enemy_ani_1.png"); 
-	textureAnt[7].loadFromFile("graphics/enemy_animations/enemy_ani_2.png"); 
+	textureAnt[6].loadFromFile("graphics/enemy_animations/enemy_ani_1.png");
+	textureAnt[7].loadFromFile("graphics/enemy_animations/enemy_ani_2.png");
 	textureAnt[8].loadFromFile("graphics/enemy_animations/enemy_ani_3.png");
-	textureAnt[9].loadFromFile("graphics/enemy_animations/enemy_ani_4.png"); 
+	textureAnt[9].loadFromFile("graphics/enemy_animations/enemy_ani_4.png");
 	textureAnt[10].loadFromFile("graphics/enemy_animations/enemy_ani_5.png");
 	textureAnt[11].loadFromFile("graphics/enemy_animations/enemy_ani_6.png");
 
@@ -287,6 +293,10 @@ int main() {
 
 					}
 				}
+				//else if (spriteUpgrade.getGlobalBounds().contains(translated_pos)) {	// przycisk Upgrade
+				//	&Castle::updateCastle;
+				// player->money -= 1000;
+				//}
 
 
 			}
@@ -361,6 +371,8 @@ int main() {
 		window.draw(spriteEggs);			// rysowanie UI
 		window.draw(playersMoney);
 
+		// window.draw(spriteUpgrade);			// UPGRADE BUTTON
+
 		window.draw(addAntButton_1);		// te trzy mrówki gracz mo¿e zakupiæ od samego pocz¹tku gry
 		window.draw(addAntButton_2);
 		window.draw(addAntButton_3);
@@ -370,14 +382,14 @@ int main() {
 
 		window.draw(lifeBarCastle->lifeBar_castle);
 		window.draw(lifeBarOpponentCastle->lifeBar_castle);
+
 		//if (ourCastle->level >= 2) {		// te dwa ify sprawdzaj¹, czy zamek gracza ma odpowiedni poziom, aby móg³ zakupiæ inne mrówki
+		//	window.draw(addAntButton_3);
 		//	window.draw(addAntButton_4);
-		//	window.draw(addAntButton_5);
-		//	window.draw(addAntButton_6);
 		//}
 		//if (ourCastle->level >= 3) {
-		//	window.draw(addAntButton_7);
-		//	window.draw(addAntButton_8);
+		//	window.draw(addAntButton_5);
+		//	window.draw(addAntButton_6);
 		//}
 
 
