@@ -53,6 +53,9 @@ Jakub Stroiński:
 Kamil Szymkowiak:
 Stworzenie wstępnej klasy lifebar z testowymi wartościami
 
+Klaudiusz Rozenek:
+- Dodanie 3 spritesheetów potrzebnych do animacji mrówek
+
 ---------------------------------------------------------------------------------------------------------------------------
 
 14.05.2020:
@@ -66,7 +69,6 @@ Mateusz Osinski + Mikolaj Sarnecki:
 - Dodanie mozliwosci wyboru + ruszanie strzalkami 
 
 Klaudiusz Rozenek:
-- Dodanie 3 spritesheetów potrzebnych do animacji mrówek
 - Dodano motywu menu
 
 ---------------------------------------------------------------------------------------------------------------------------
