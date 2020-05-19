@@ -28,6 +28,13 @@ int main() {
 	spriteBackground.setTexture(textureBackground);
 	spriteBackground.setPosition(0, 0);
 
+	Texture textureCoins;
+	textureCoins.loadFromFile("graphics/UI/coins.png");
+	Sprite spriteCoins;
+	spriteCoins.setTexture(textureCoins);
+	spriteCoins.scale(0.02, 0.02);
+	spriteCoins.setPosition(100, 30);
+
 	Font font;									// czcionka
 	font.loadFromFile("graphics/LEMONMILK-Medium.otf");
 	Text playersMoney("100", font);				// tekst z pieniêdzmi gracza
@@ -38,32 +45,42 @@ int main() {
 	playersMoney.setOutlineColor(sf::Color::Black);
 	playersMoney.setPosition(50, 50);
 
-	Texture textureAdd;
-	textureAdd.loadFromFile("graphics/add.png");
+	Texture textureAdd_1;
+	textureAdd_1.loadFromFile("graphics/UI/UI_1.png");
+	Texture textureAdd_2;
+	textureAdd_2.loadFromFile("graphics/UI/UI_2.png");
+	Texture textureAdd_3;
+	textureAdd_3.loadFromFile("graphics/UI/UI_3.png");
+	Texture textureAdd_4;
+	textureAdd_4.loadFromFile("graphics/UI/UI_4.png");
+	Texture textureAdd_5;
+	textureAdd_5.loadFromFile("graphics/UI/UI_5.png");
+	Texture textureAdd_6;
+	textureAdd_6.loadFromFile("graphics/UI/UI_6.png");
 
 	Sprite addAntButton_1;
-	addAntButton_1.setTexture(textureAdd);
-	addAntButton_1.setPosition(100, 200);
+	addAntButton_1.setTexture(textureAdd_1);
+	addAntButton_1.setPosition(50, 90);
 
 	Sprite addAntButton_2;
-	addAntButton_2.setTexture(textureAdd);
-	addAntButton_2.setPosition(300, 200);
+	addAntButton_2.setTexture(textureAdd_2);
+	addAntButton_2.setPosition(130, 90);
 
 	Sprite addAntButton_3;
-	addAntButton_3.setTexture(textureAdd);
-	addAntButton_3.setPosition(500, 200);
+	addAntButton_3.setTexture(textureAdd_3);
+	addAntButton_3.setPosition(210, 90);
 
 	Sprite addAntButton_4;
-	addAntButton_4.setTexture(textureAdd);
-	addAntButton_4.setPosition(700, 200);
+	addAntButton_4.setTexture(textureAdd_4);
+	addAntButton_4.setPosition(290, 90);
 
 	Sprite addAntButton_5;
-	addAntButton_5.setTexture(textureAdd);
-	addAntButton_5.setPosition(900, 200);
+	addAntButton_5.setTexture(textureAdd_5);
+	addAntButton_5.setPosition(370, 90);
 
 	Sprite addAntButton_6;
-	addAntButton_6.setTexture(textureAdd);
-	addAntButton_6.setPosition(1100, 200);
+	addAntButton_6.setTexture(textureAdd_6);
+	addAntButton_6.setPosition(450, 90);
 
 	Texture textureAnt[8]; 	//Tworzenie tekstur mrowek
 	textureAnt[0].loadFromFile("graphics/animations/ant_ani_1.png");
@@ -326,6 +343,7 @@ int main() {
 
 		window.draw(spriteBackground);  //Rysowanie sceny gry
 
+		window.draw(spriteCoins);		 // rysowanie UI
 		window.draw(playersMoney);
 
 		window.draw(addAntButton_1);		// te trzy mrówki gracz mo¿e zakupiæ od samego pocz¹tku gry
