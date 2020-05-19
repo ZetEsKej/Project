@@ -100,4 +100,8 @@ Jakub Stroiński:
 - Dodanie odwróconych modeli mrówek (dla przeciwników) i zaaplikowanie ich w kodzie
 - Wstępna praca nad systemem ulepszania mrowiska oraz audio gry
 
+Kamil Szymkowiak:
+-Działający Lifebar dla obu zamków(trzeba jeszcze ustawić jego usuwanie przy końcu gry)
+-Dodano brakujący wpis do main dzięki czmu mrówki przeciwnika mogą attakować nasz zamek
+
 ----------------------------------------------------------------------------------------------------------------------------
