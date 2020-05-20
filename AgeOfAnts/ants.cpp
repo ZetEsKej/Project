@@ -6,7 +6,7 @@ public:
 
 	Ant_l1(Player* player) :Ant(player) {
 		level = 1;
-		damage = 0.5;
+		damage = 6.05;
 		hp = 2000.0;
 		movementSpeed = 2.18;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
@@ -27,7 +27,7 @@ public:
 
 	Ant_l2(Player* player) :Ant(player) {
 		level = 2;
-		damage = 0.7;
+		damage = 8.47;
 		hp = 2400.0;
 		movementSpeed = 1.92;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
@@ -46,7 +46,7 @@ public:
 
 	Ant_l3(Player* player) :Ant(player) {
 		level = 3;
-		damage = 0.9;
+		damage = 10.89;
 		hp = 2800.0;
 		movementSpeed = 1.68;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
@@ -66,7 +66,7 @@ public:
 
 	Ant_l4(Player* player) :Ant(player) {
 		level = 4;
-		damage = 1.3;
+		damage = 15.73;
 		hp = 3000.0;
 		movementSpeed = 2.4;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
@@ -86,7 +86,7 @@ public:
 
 	Ant_l5(Player* player) :Ant(player) {
 		level = 5;
-		damage = 1.0;
+		damage = 12.1;
 		hp = 3500.0;
 		movementSpeed = 1.44;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
@@ -105,7 +105,7 @@ public:
 
 	Ant_l6(Player* player) :Ant(player) {
 		level = 6;
-		damage = 1.3;
+		damage = 15.73;
 		hp = 4200.0;
 		movementSpeed = 1.08;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê

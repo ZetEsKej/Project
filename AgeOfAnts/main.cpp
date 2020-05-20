@@ -257,7 +257,7 @@ int main() {
 
 					}
 				}
-				else if (addAntButton_3.getGlobalBounds().contains(translated_pos) && ourCastle->level == 2) {	// trzeci przycisk dodawania mrówek
+				else if (addAntButton_3.getGlobalBounds().contains(translated_pos) && ourCastle->level >= 2) {	// trzeci przycisk dodawania mrówek
 
 					drawAnt = true;
 					if (player->money >= Ant::cost[2]) {								// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
@@ -274,7 +274,7 @@ int main() {
 
 					}
 				}
-				else if (addAntButton_4.getGlobalBounds().contains(translated_pos) && ourCastle->level == 2) {	// czwarty przycisk dodawania mrówek
+				else if (addAntButton_4.getGlobalBounds().contains(translated_pos) && ourCastle->level >= 2) {	// czwarty przycisk dodawania mrówek
 
 					drawAnt = true;
 					if (player->money >= Ant::cost[3]) {								// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
@@ -346,7 +346,10 @@ int main() {
 				addMoney = 0.0;
 			}
 
-			Ant::checkForDead(ants, antsLifebars, opponentsLifebars, opponents, player, opponentPlayer);		// zobacz, czy s¹ jakieœ martwe mrówki do usuniêcia z mapy
+			bool PlayDeathSound = Ant::checkForDead(ants, antsLifebars, opponentsLifebars, opponents, player, opponentPlayer);		// zobacz, czy s¹ jakieœ martwe mrówki do usuniêcia z mapy
+			if (PlayDeathSound == true) {
+				deathSound.play();
+			}
 
 			playersMoney.setString(std::to_string(player->money));												// przypisanie do UI wartosci money z klasy player
 			castleLevel.setString("Castle level: " + std::to_string(ourCastle->level));							// przypisanie do UI wartosci level z klasy Castle
@@ -360,6 +363,7 @@ int main() {
 						opponents[i]->move();
 					}
 					else {							// zaatakuj przeciwnika
+						//deathSound.play();
 						if (i == 0) {				// jest to najstarsza mrówka - tylko ona mo¿e spotkaæ przeciwnika
 							if (!ants.empty()) {	// sprawdzenie, czy spotka³a przeciwnika, czy jego zamek
 								opponents[i]->attackOpponent(ants[0]);
