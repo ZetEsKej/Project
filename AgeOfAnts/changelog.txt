@@ -133,6 +133,6 @@ Jakub Stroiński:
 
 Jakub Stroiński + Paweł Jakubowski:
 - Wprowadzenie stałej ilości klatek na sekundę i przystosowanie mrówek do tej częstotliwości
-- Praca nad poprawnym działaniem dźwięków 
+- Praca nad poprawnym działaniem dźwięków (udało się wprowadzić w całości dzwięk umierania mrówek)
 
 ----------------------------------------------------------------------------------------------------------------------------
