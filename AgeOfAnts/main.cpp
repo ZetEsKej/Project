@@ -258,7 +258,7 @@ int main() {
 				else if (addAntButton_5.getGlobalBounds().contains(translated_pos)) {	// piaty przycisk dodawania mrówek
 
 					drawAnt = true;
-					if (player->money >= Ant::cost[2]) {					// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
+					if (player->money >= Ant::cost[4]) {					// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
 						ants.push_back(new Ant_l5(player));					// tworzenie mrówki
 						ants[ants.size() - 1]->sprite.setTexture(textureAnt[4]);
 						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
