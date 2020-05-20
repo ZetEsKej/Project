@@ -135,4 +135,9 @@ Jakub Stroiński + Paweł Jakubowski:
 - Wprowadzenie stałej ilości klatek na sekundę i przystosowanie mrówek do tej częstotliwości
 - Praca nad poprawnym działaniem dźwięków (udało się wprowadzić w całości dzwięk umierania mrówek)
 
+Klaudiusz Rozenek:
+- Dodanie ikonek disabled dla menu zakupu mrówek
+- Dodanie ikonek dźwięku
+- Dodanie ikonek ulepszeń zamku
+
 ----------------------------------------------------------------------------------------------------------------------------
