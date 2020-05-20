@@ -1,9 +1,9 @@
 #include "castle.cpp"
 #include "player.cpp"
 
-class Lifebar;					// to jest potrzebne, ¿ebym móg³ odnieœæ siê do tej klasy w pewnej fukncji
+class Lifebar;								// to jest potrzebne, ¿ebym móg³ odnieœæ siê do tej klasy w pewnej fukncji
 
-class Ant : public Object {		// klasa od mrówek, dziedzicz¹ca po klasie Object
+class Ant : public Object {					// klasa od mrówek, dziedzicz¹ca po klasie Object
 
 public:
 	static unsigned int counter;			// licznik mrówek obecnych na mapie
@@ -56,7 +56,7 @@ public:
 		counter--;
 	}
 
-	void move() {							// poruszanie siê
+	void move() {					// poruszanie siê
 
 		if (belongsToPlayer) {
 			sprite.move(movementSpeed, 0);
@@ -72,7 +72,7 @@ public:
 		}
 	}
 
-	void attackOpponent(Ant* opponent) {	// zaatakuj mrówkê przeciwnika
+	void attackOpponent(Ant* opponent) {		// zaatakuj mrówkê przeciwnika
 
 		// poni¿ej obliczanie mo¿liwych zadanych obra¿eñ
 		float luck;

@@ -51,7 +51,7 @@ public:
 		movementSpeed = 0.14;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 294;
-		height = 112; /*98*/
+		height = 112;
 
 		rect.setSize(sf::Vector2f(width - 15, height));
 		sprite.setPosition(sprite.getPosition().x, 990 - height);

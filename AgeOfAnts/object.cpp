@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-class Object {			// klasa bazowa dla wszystkich obiektów typu mrówki
+class Object {					// klasa bazowa dla wszystkich obiektów typu mrówki
 
 public:
 	sf::Sprite sprite;
