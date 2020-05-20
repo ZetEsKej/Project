@@ -2,6 +2,7 @@
 //
 
 //#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <vector>
 //#include <iostream>
 #include "lifebar.cpp"
@@ -112,6 +113,28 @@ int main() {
 	textureAnt[9].loadFromFile("graphics/enemy_animations/enemy_ani_4.png");
 	textureAnt[10].loadFromFile("graphics/enemy_animations/enemy_ani_5.png");
 	textureAnt[11].loadFromFile("graphics/enemy_animations/enemy_ani_6.png");
+	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA AUDIO -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	Music backgroundMusic;
+	backgroundMusic.openFromFile("audio/backgroundMusic.wav");
+	backgroundMusic.setLoop(true);
+	backgroundMusic.setVolume(30.f);
+
+	SoundBuffer hitBuffer;
+	hitBuffer.loadFromFile("audio/hitSound.wav");
+	Sound hitSound;
+	hitSound.setBuffer(hitBuffer);
+	hitSound.setLoop(true);
+	hitSound.setVolume(120.f);
+
+	SoundBuffer deathBuffer;
+	deathBuffer.loadFromFile("audio/deathSound.wav");
+	Sound deathSound;
+	deathSound.setBuffer(deathBuffer);
+	deathSound.setVolume(120.f);
+	Sound deathSound2;
+	deathSound2.setBuffer(deathBuffer);
+	deathSound2.setVolume(120.f);
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA ZMIENNYCH / TABLIC -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -136,6 +159,7 @@ int main() {
 	float addMoney = 0.0;			// wartoœæ do liczenia czasu (player dostaje dodatkowe jaja co jakiœ czas)
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- GAME LOOP -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	backgroundMusic.play();
 
 	while (window.isOpen()) {
 
@@ -180,10 +204,14 @@ int main() {
 			}
 
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {		// pauzowanie gry po wciœniêciu klawisza ESC
-				if (!isGamePaused)
+				if (!isGamePaused) {
 					isGamePaused = true;
-				else
+					backgroundMusic.pause();
+				}
+				else {
 					isGamePaused = false;
+					backgroundMusic.play();
+				}
 			}
 
 
@@ -318,8 +346,8 @@ int main() {
 
 			Ant::checkForDead(ants, antsLifebars, opponentsLifebars, opponents, player, opponentPlayer);		// zobacz, czy s¹ jakieœ martwe mrówki do usuniêcia z mapy
 
-			playersMoney.setString(std::to_string(player->money));
-			castleLevel.setString("Castle level: " + std::to_string(ourCastle->level));
+			playersMoney.setString(std::to_string(player->money));												// przypisanie do UI wartosci money z klasy player
+			castleLevel.setString("Castle level: " + std::to_string(ourCastle->level));							// przypisanie do UI wartosci level z klasy Castle
 
 			if (drawAnt == true) {
 
@@ -339,6 +367,7 @@ int main() {
 					opponentsLifebars[i]->updateLifebar(opponents[i]);
 					lifeBarCastle->updateLifebar(ourCastle);
 				}
+
 				for (int i = 0; i < ants.size(); i++) {
 					ants[i]->isMoving = ants[i]->checkForCollision(ants, opponents, opponentsCastle);
 					if (ants[i]->isMoving == true) {
