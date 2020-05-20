@@ -159,11 +159,11 @@ int main() {
 
 	Clock clock;
 
-	Player* player = new Player(true);
-	Player* opponentPlayer = new Player(false);
-
 	Castle* opponentsCastle = new Castle(false);
 	Castle* ourCastle = new Castle(true);
+
+	Player* player = new Player(true, ourCastle);
+	Player* opponentPlayer = new Player(false, opponentsCastle);
 
 	bool isGamePaused = false;
 	bool Muted = false;

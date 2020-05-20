@@ -1,4 +1,3 @@
-#include "castle.cpp"
 #include "player.cpp"
 #include "audio.cpp"
 
@@ -78,10 +77,10 @@ public:
 		// poni¿ej obliczanie mo¿liwych zadanych obra¿eñ
 		float luck;
 		if (opponent->belongsToPlayer == false) {	// nasza mrówka atakuje
-			luck = Ant::getLuck(1.0, 1.1);		// zadawane obra¿enia s¹ mno¿one przez wartoœæ z zakresu 0.9-1.1 -> szczêœcie
+			luck = Player::getLuck(1.0, 1.1);		// zadawane obra¿enia s¹ mno¿one przez wartoœæ z zakresu 0.9-1.1 -> szczêœcie
 		}
 		else {
-			luck = Ant::getLuck(0.9, 1.1);
+			luck = Player::getLuck(0.9, 1.1);
 		}
 
 		opponent->hp -= this->damage * luck;
@@ -94,7 +93,7 @@ public:
 
 	void attackCastle(Castle* castle) {		// zaatakuj zamek przeciwnika
 
-		float luck = Ant::getLuck(0.9, 1.1);
+		float luck = Player::getLuck(0.9, 1.1);
 		castle->hp -= this->damage * luck;		// zadawane obra¿enia s¹ mno¿one przez wartoœæ z zakresu 0.9-1.1 -> szczêœcie
 		std::cout << castle->hp << std::endl;
 		if (castle->hp < 0) {
@@ -181,10 +180,15 @@ public:
 
 	}*/
 
-	static float getLuck(float a, float b) {				// metoda losuj¹ca szczêœcie przy zadawaniu obra¿eñ; 
-		float random = ((float)rand()) / (float)RAND_MAX;
-		float diff = b - a;
-		float r = random * diff;
-		return a + r;
+	static int countPowerOfAnts(std::vector<Ant*> ants) {	// funkcja wylicza "si³ê" wszystkich jednostek po danej stronie, jest to potrzebne do AI
+
+		unsigned int overallPower = 0;
+
+		for (int i = 0; i < ants.size(); i++) {
+			overallPower += ants[i]->level;
+		}
+
+		return overallPower;
 	}
+
 };
