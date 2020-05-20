@@ -129,5 +129,6 @@ Klaudiusz Rozenek:
 
 Jakub Stroiński:
 - Dodanie w pełni funkcjonalnego systemu ulepszania mrowiska/bazy (potrzeba jedynie podmienić grafikę przycisku, gdy Klaudiusz go przygotuje)
+- Wprowadzenie muzyki w tle + zainicjowanie buforów dźwięków uderzenia i śmierci
 
 ----------------------------------------------------------------------------------------------------------------------------
