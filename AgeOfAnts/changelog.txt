@@ -124,3 +124,10 @@ Klaudiusz Rozenek:
 - Dodanie pierwszych przycisków do UI
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+20.05.2020
+
+Jakub Stroiński:
+- Dodanie w pełni funkcjonalnego systemu ulepszania mrowiska/bazy (potrzeba jedynie podmienić grafikę przycisku, gdy Klaudiusz go przygotuje)
+
+----------------------------------------------------------------------------------------------------------------------------
