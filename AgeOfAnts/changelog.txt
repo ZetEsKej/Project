@@ -80,12 +80,12 @@ Mateusz Osinski + Mikolaj Sarnecki:
 - Dzialaja wejscia uzytkownika, wybór, zmiana tla oraz czcionki 
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 17.05.2020 
 
 Osiński + Sarnecki:
 - Wrzucenie stabilnej wersji menu, upiększenie menu,
 - zamysł koncepcji co do ustawień/exit + play
-- zamieszczenie na githubie. 
 
 ----------------------------------------------------------------------------------------------------------------------------
 
@@ -130,5 +130,9 @@ Klaudiusz Rozenek:
 Jakub Stroiński:
 - Dodanie w pełni funkcjonalnego systemu ulepszania mrowiska/bazy (potrzeba jedynie podmienić grafikę przycisku, gdy Klaudiusz go przygotuje)
 - Wprowadzenie muzyki w tle + zainicjowanie buforów dźwięków uderzenia i śmierci
+
+Jakub Stroiński + Paweł Jakubowski:
+- Wprowadzenie stałej ilości klatek na sekundę i przystosowanie mrówek do tej częstotliwości
+- Praca nad poprawnym działaniem dźwięków 
 
 ----------------------------------------------------------------------------------------------------------------------------
