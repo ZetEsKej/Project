@@ -19,29 +19,29 @@ int main() {
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA GRAFIKI -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	VideoMode vm(1920, 1080);							//Tworzenie objektu videomode - tworzenie ekranu
-	RenderWindow window(vm, "Age Of Ants");				//Tworzenie i otwarcie okienka gry
+	VideoMode vm(1920, 1080);									//Tworzenie objektu videomode - tworzenie ekranu
+	RenderWindow window(vm, "Age Of Ants");						//Tworzenie i otwarcie okienka gry
 
 	window.setFramerateLimit(60);
 
-	View view = window.getDefaultView();				//Kamera 2D
-	int boundaryControl = 0;							// kontrola wyjezdzania kamery za ekran
+	View view = window.getDefaultView();						//Kamera 2D
+	int boundaryControl = 0;									// kontrola wyjezdzania kamery za ekran
 
-	Texture textureBackground;							//Przygotowanie tekstury tla
+	Texture textureBackground;									//Przygotowanie tekstury tla
 	textureBackground.loadFromFile("graphics/backgrounds/background_blue_B.png"); //Za³adowanie tekstury t³a
 	Sprite spriteBackground;
 	spriteBackground.setTexture(textureBackground);
 	spriteBackground.setPosition(0, 0);
 
-	Texture textureEggs;								// jajeczko przy walucie
+	Texture textureEggs;										// jajeczko przy walucie
 	textureEggs.loadFromFile("graphics/UI/jajco.png");
 	Sprite spriteEggs;
 	spriteEggs.setTexture(textureEggs);
 	spriteEggs.setPosition(50, 44);
 
-	Font font;											// czcionka
+	Font font;													// czcionka
 	font.loadFromFile("graphics/LEMONMILK-Medium.otf");
-	Text playersMoney("100", font);						// tekst z pieniêdzmi gracza
+	Text playersMoney("100", font);								// tekst z pieniêdzmi gracza
 	playersMoney.setCharacterSize(30);
 	playersMoney.setStyle(sf::Text::Bold);
 	playersMoney.setFillColor(sf::Color::White);
@@ -49,7 +49,7 @@ int main() {
 	playersMoney.setOutlineColor(sf::Color::Black);
 	playersMoney.setPosition(85, 40);
 
-	Text castleLevel("Castle level: 1", font);
+	Text castleLevel("Castle level: 1", font);					// Tekst o poziomie zamku
 	castleLevel.setCharacterSize(20);
 	castleLevel.setStyle(sf::Text::Bold);
 	castleLevel.setFillColor(sf::Color::White);
@@ -57,13 +57,21 @@ int main() {
 	castleLevel.setOutlineColor(sf::Color::Black);
 	castleLevel.setPosition(50, 180);
 
-	Texture textureUpgrade1;
+	Texture textureUpgrade1;									// Przyciski UPGRADE
 	Texture textureUpgrade2;
 	textureUpgrade1.loadFromFile("graphics/UI/UI_zamek_1.png");
 	textureUpgrade2.loadFromFile("graphics/UI/UI_zamek_2.png");
 	Sprite spriteUpgrade;
 	spriteUpgrade.setTexture(textureUpgrade1);
 	spriteUpgrade.setPosition(960, 50);
+
+	Texture textureMute;
+	Texture textureUnmute;
+	textureMute.loadFromFile("graphics/UI/UI_sound_on.png");
+	textureUnmute.loadFromFile("graphics/UI/UI_sound_off.png");
+	Sprite spriteMute;
+	spriteMute.setTexture(textureMute);
+	spriteMute.setPosition(1820, 50);
 
 	Texture textureAdd_1;										// Enabled Przyciski
 	textureAdd_1.loadFromFile("graphics/UI/UI_1.png");
@@ -158,6 +166,7 @@ int main() {
 	Castle* ourCastle = new Castle(true);
 
 	bool isGamePaused = false;
+	bool Muted = false;
 
 	std::vector<Ant*> ants;			// tablica z wszystkimi mrówkami
 	std::vector<Lifebar*> antsLifebars;
@@ -197,6 +206,7 @@ int main() {
 				spriteUpgrade.move(-40.0f, 0);
 				playersMoney.move(-40.0f, 0);
 				castleLevel.move(-40.0f, 0);
+				spriteMute.move(-40.0f, 0);
 				spriteEggs.move(-40.0f, 0);
 			}
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
@@ -212,6 +222,7 @@ int main() {
 				spriteUpgrade.move(40.0f, 0);
 				playersMoney.move(40.0f, 0);
 				castleLevel.move(40.0f, 0);
+				spriteMute.move(40.0f, 0);
 				spriteEggs.move(40.0f, 0);
 			}
 
@@ -426,6 +437,7 @@ int main() {
 		window.draw(spriteEggs);			// rysowanie UI
 		window.draw(playersMoney);
 		window.draw(castleLevel);
+		window.draw(spriteMute);
 
 		window.draw(addAntButton_1);		// te dwie mrówki gracz mo¿e zakupiæ od samego pocz¹tku gry
 		window.draw(addAntButton_2);
