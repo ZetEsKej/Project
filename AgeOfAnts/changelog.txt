@@ -132,6 +132,7 @@ Jakub Stroiński:
 - Wprowadzenie muzyki w tle + zainicjowanie buforów dźwięków uderzenia i śmierci
 - Podmienienie ikon UI, poprawki kodu z tym związane - gracz teraz nie może kupić ulepszenia, jeśli jego balans jaj spadnie poniżej zera
 - Poprawa przydzielania czasowo jaj, po ustawieniu maxymalnego framerate'u
+- Wstępne wprowadzenie przycisku wyciszenia gry
 
 Jakub Stroiński + Paweł Jakubowski:
 - Wprowadzenie stałej ilości klatek na sekundę i przystosowanie mrówek do tej częstotliwości
