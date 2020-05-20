@@ -1,5 +1,6 @@
 #include "castle.cpp"
 #include "player.cpp"
+#include "audio.cpp"
 
 class Lifebar;								// to jest potrzebne, ¿ebym móg³ odnieœæ siê do tej klasy w pewnej fukncji
 
@@ -66,7 +67,7 @@ public:
 			sprite.move(-movementSpeed, 0);
 			rect.move(-movementSpeed, 0);
 		}
-		walkingCounter += 0.02;
+		walkingCounter += 0.2;
 		if (walkingCounter >= 6) {			// ostatnia klatka animacji -> zacznij od pocz¹tku
 			walkingCounter = 0;
 		}
@@ -158,6 +159,7 @@ public:
 				std::cout << opponentPlayer->money << std::endl;
 				allies.erase(allies.begin() + i);
 				antsLifebars.erase(antsLifebars.begin() + i);
+				Sounds::deathPlay;
 			}
 		}
 		for (int i = 0; i < opponents.size(); i++) {
@@ -166,6 +168,7 @@ public:
 				std::cout << "Nasze jaja: " << player->money << std::endl;
 				opponents.erase(opponents.begin() + i);
 				opponentsLifebars.erase(opponentsLifebars.begin() + i);
+				Sounds::deathPlay;
 			}
 		}
 	}

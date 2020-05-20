@@ -8,7 +8,7 @@ public:
 		level = 1;
 		damage = 0.5;
 		hp = 2000.0;
-		movementSpeed = 0.18;
+		movementSpeed = 2.18;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 149;
 		height = 66;
@@ -29,7 +29,7 @@ public:
 		level = 2;
 		damage = 0.7;
 		hp = 2400.0;
-		movementSpeed = 0.16;
+		movementSpeed = 1.92;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 220;
 		height = 94;
@@ -48,7 +48,7 @@ public:
 		level = 3;
 		damage = 0.9;
 		hp = 2800.0;
-		movementSpeed = 0.14;
+		movementSpeed = 1.68;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 294;
 		height = 112;
@@ -68,7 +68,7 @@ public:
 		level = 4;
 		damage = 1.3;
 		hp = 3000.0;
-		movementSpeed = 0.2;
+		movementSpeed = 2.4;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 280;
 		height = 235;
@@ -88,7 +88,7 @@ public:
 		level = 5;
 		damage = 1.0;
 		hp = 3500.0;
-		movementSpeed = 0.12;
+		movementSpeed = 1.44;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 356;
 		height = 103;
@@ -107,7 +107,7 @@ public:
 		level = 6;
 		damage = 1.3;
 		hp = 4200.0;
-		movementSpeed = 0.09;
+		movementSpeed = 1.08;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
 		width = 455;
 		height = 201;

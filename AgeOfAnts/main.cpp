@@ -22,6 +22,8 @@ int main() {
 	VideoMode vm(1920, 1080);							//Tworzenie objektu videomode - tworzenie ekranu
 	RenderWindow window(vm, "Age Of Ants");				//Tworzenie i otwarcie okienka gry
 
+	window.setFramerateLimit(60);
+
 	View view = window.getDefaultView();				//Kamera 2D
 	int boundaryControl = 0;							// kontrola wyjezdzania kamery za ekran
 
@@ -113,6 +115,7 @@ int main() {
 	textureAnt[9].loadFromFile("graphics/enemy_animations/enemy_ani_4.png");
 	textureAnt[10].loadFromFile("graphics/enemy_animations/enemy_ani_5.png");
 	textureAnt[11].loadFromFile("graphics/enemy_animations/enemy_ani_6.png");
+
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA AUDIO -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 	Music backgroundMusic;
@@ -120,12 +123,12 @@ int main() {
 	backgroundMusic.setLoop(true);
 	backgroundMusic.setVolume(30.f);
 
-	SoundBuffer hitBuffer;
-	hitBuffer.loadFromFile("audio/hitSound.wav");
-	Sound hitSound;
-	hitSound.setBuffer(hitBuffer);
-	hitSound.setLoop(true);
-	hitSound.setVolume(120.f);
+	//SoundBuffer hitBuffer;
+	//hitBuffer.loadFromFile("audio/hitSound.wav");
+	//Sound hitSound;
+	//hitSound.setBuffer(hitBuffer);
+	//hitSound.setLoop(true);
+	//hitSound.setVolume(120.f);
 
 	SoundBuffer deathBuffer;
 	deathBuffer.loadFromFile("audio/deathSound.wav");
@@ -137,6 +140,8 @@ int main() {
 	deathSound2.setVolume(120.f);
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA ZMIENNYCH / TABLIC -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	Clock clock;
 
 	Player* player = new Player(true);
 	Player* opponentPlayer = new Player(false);
@@ -159,11 +164,10 @@ int main() {
 	float addMoney = 0.0;			// wartoœæ do liczenia czasu (player dostaje dodatkowe jaja co jakiœ czas)
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- GAME LOOP -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
 	backgroundMusic.play();
 
 	while (window.isOpen()) {
-
-		Clock clock;
 
 		Event event;
 
@@ -213,8 +217,6 @@ int main() {
 					backgroundMusic.play();
 				}
 			}
-
-
 
 			if (event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Left) {	// klikniêcie LPM
 
@@ -323,7 +325,7 @@ int main() {
 
 					}
 				}
-				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level < 3) {	// przycisk Upgrade
+				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level < 3 && player->money>1000) {	// przycisk Upgrade
 					ourCastle->level += 1;
 					player->money -= 1000;
 				}
@@ -362,6 +364,9 @@ int main() {
 							if (!ants.empty()) {	// sprawdzenie, czy spotka³a przeciwnika, czy jego zamek
 								opponents[i]->attackOpponent(ants[0]);
 							}
+							else {
+								opponents[i]->attackCastle(ourCastle);
+							}
 						}
 					}
 					opponentsLifebars[i]->updateLifebar(opponents[i]);
@@ -396,9 +401,12 @@ int main() {
 
 		window.setView(view);
 
-		window.clear();						//Usuniecie wszystkiego z ostatniego frame'a - czyszczenie sceny
+		Time time = clock.getElapsedTime();
+		clock.restart().asSeconds();
 
-		window.draw(spriteBackground);		//Rysowanie sceny gry
+		window.clear();						// Usuniecie wszystkiego z ostatniego frame'a - czyszczenie sceny
+
+		window.draw(spriteBackground);		// Rysowanie sceny gry
 
 		window.draw(spriteEggs);			// rysowanie UI
 		window.draw(playersMoney);
