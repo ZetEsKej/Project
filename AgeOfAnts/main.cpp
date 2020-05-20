@@ -59,13 +59,13 @@ int main() {
 
 	Texture textureUpgrade1;
 	Texture textureUpgrade2;
-	textureUpgrade1.loadFromFile("graphics/UI/UI_6.png");
-	textureUpgrade2.loadFromFile("graphics/UI/UI_5.png");
+	textureUpgrade1.loadFromFile("graphics/UI/UI_zamek_1.png");
+	textureUpgrade2.loadFromFile("graphics/UI/UI_zamek_2.png");
 	Sprite spriteUpgrade;
 	spriteUpgrade.setTexture(textureUpgrade1);
 	spriteUpgrade.setPosition(960, 50);
 
-	Texture textureAdd_1;
+	Texture textureAdd_1;										// Enabled Przyciski
 	textureAdd_1.loadFromFile("graphics/UI/UI_1.png");
 	Texture textureAdd_2;
 	textureAdd_2.loadFromFile("graphics/UI/UI_2.png");
@@ -77,6 +77,14 @@ int main() {
 	textureAdd_5.loadFromFile("graphics/UI/UI_5.png");
 	Texture textureAdd_6;
 	textureAdd_6.loadFromFile("graphics/UI/UI_6.png");
+	Texture textureAdd_3_dis;									// Disabled przyciski
+	textureAdd_3_dis.loadFromFile("graphics/UI/UI_3_dis.png");
+	Texture textureAdd_4_dis;
+	textureAdd_4_dis.loadFromFile("graphics/UI/UI_4_dis.png");
+	Texture textureAdd_5_dis;
+	textureAdd_5_dis.loadFromFile("graphics/UI/UI_5_dis.png");
+	Texture textureAdd_6_dis;
+	textureAdd_6_dis.loadFromFile("graphics/UI/UI_6_dis.png");
 
 	Sprite addAntButton_1;
 	addAntButton_1.setTexture(textureAdd_1);
@@ -87,19 +95,19 @@ int main() {
 	addAntButton_2.setPosition(130, 90);
 
 	Sprite addAntButton_3;
-	addAntButton_3.setTexture(textureAdd_3);
+	addAntButton_3.setTexture(textureAdd_3_dis);
 	addAntButton_3.setPosition(210, 90);
 
 	Sprite addAntButton_4;
-	addAntButton_4.setTexture(textureAdd_4);
+	addAntButton_4.setTexture(textureAdd_4_dis);
 	addAntButton_4.setPosition(290, 90);
 
 	Sprite addAntButton_5;
-	addAntButton_5.setTexture(textureAdd_5);
+	addAntButton_5.setTexture(textureAdd_5_dis);
 	addAntButton_5.setPosition(370, 90);
 
 	Sprite addAntButton_6;
-	addAntButton_6.setTexture(textureAdd_6);
+	addAntButton_6.setTexture(textureAdd_6_dis);
 	addAntButton_6.setPosition(450, 90);
 
 	Texture textureAnt[12]; 			//Tworzenie tekstur mrowek
@@ -325,11 +333,14 @@ int main() {
 
 					}
 				}
-				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level < 3 && player->money>1000) {	// przycisk Upgrade
+				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level == 1 && player->money >= 1000) {	// przycisk Upgrade lvl 2
 					ourCastle->level += 1;
 					player->money -= 1000;
 				}
-
+				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level == 2 && player->money >= 2000) {	// przycisk Upgrade lvl 3
+					ourCastle->level += 1;
+					player->money -= 2000;
+				}
 
 			}
 
@@ -339,7 +350,7 @@ int main() {
 
 		if (!isGamePaused) {						// czy gra zosa³a spauzowana 
 
-			addMoney += 0.01;
+			addMoney += 0.50;
 			if (addMoney > 50) {					// player dostaje dodatkowe dziesiêæ jaj co dziesiêæ sekund
 				player->money += 10;
 				std::cout << player->money << std::endl;
@@ -418,17 +429,21 @@ int main() {
 
 		window.draw(addAntButton_1);		// te dwie mrówki gracz mo¿e zakupiæ od samego pocz¹tku gry
 		window.draw(addAntButton_2);
+		window.draw(addAntButton_3);
+		window.draw(addAntButton_4);
+		window.draw(addAntButton_5);
+		window.draw(addAntButton_6);
 
 		window.draw(lifeBarCastle->lifeBar_castle);
 		window.draw(lifeBarOpponentCastle->lifeBar_castle);
 
 		if (ourCastle->level >= 2) {		// Poziom oblokowuje 2 kolejne mrowki
-			window.draw(addAntButton_3);
-			window.draw(addAntButton_4);
+			addAntButton_3.setTexture(textureAdd_3);
+			addAntButton_4.setTexture(textureAdd_4);
 		}
 		if (ourCastle->level >= 3) {		// Poziom oblokowuje 2 kolejne mrowki
-			window.draw(addAntButton_5);
-			window.draw(addAntButton_6);
+			addAntButton_5.setTexture(textureAdd_5);
+			addAntButton_6.setTexture(textureAdd_6);
 		}
 		if (ourCastle->level == 2) {		// Zmiana tekstury przycisku Upgrade po pierwszym ulepszeniu
 			spriteUpgrade.setTexture(textureUpgrade2);
