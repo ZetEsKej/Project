@@ -144,3 +144,12 @@ Klaudiusz Rozenek:
 - Dodanie ikonek ulepszeń zamku
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+21.05.2020
+
+Jakub Stroiński:
+- Usprawnienie do pełni możliwości przycisku MUTE
+- Poprawienie funkcjonalności UI (podmian grafik)
+- Dodanie napisów przy przyciskach: Mute / Unmute / Upgrade castle
+
+----------------------------------------------------------------------------------------------------------------------------
