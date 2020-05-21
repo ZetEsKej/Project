@@ -57,10 +57,28 @@ int main() {
 	castleLevel.setOutlineColor(sf::Color::Black);
 	castleLevel.setPosition(50, 180);
 
+	Text textUpgrade("Upgrade castle", font);					// Tekst UPGRADE zamku
+	textUpgrade.setCharacterSize(20);
+	textUpgrade.setStyle(sf::Text::Bold);
+	textUpgrade.setFillColor(sf::Color::White);
+	textUpgrade.setOutlineThickness(2);
+	textUpgrade.setOutlineColor(sf::Color::Black);
+	textUpgrade.setPosition(904, 20);
+
+	Text textMute("Mute", font);								// Tekst Mute
+	textMute.setCharacterSize(20);
+	textMute.setStyle(sf::Text::Bold);
+	textMute.setFillColor(sf::Color::White);
+	textMute.setOutlineThickness(2);
+	textMute.setOutlineColor(sf::Color::Black);
+	textMute.setPosition(1823, 105);
+
 	Texture textureUpgrade1;									// Przyciski UPGRADE
 	Texture textureUpgrade2;
+	Texture textureUpgradeDis;
 	textureUpgrade1.loadFromFile("graphics/UI/UI_zamek_1.png");
 	textureUpgrade2.loadFromFile("graphics/UI/UI_zamek_2.png");
+	textureUpgradeDis.loadFromFile("graphics/UI/UI_zamek_2_dis.png");
 	Sprite spriteUpgrade;
 	spriteUpgrade.setTexture(textureUpgrade1);
 	spriteUpgrade.setPosition(960, 50);
@@ -166,7 +184,7 @@ int main() {
 	Player* opponentPlayer = new Player(false, opponentsCastle);
 
 	bool isGamePaused = false;
-	bool Muted = false;
+	bool isMuted = false;
 
 	std::vector<Ant*> ants;			// tablica z wszystkimi mrówkami
 	std::vector<Lifebar*> antsLifebars;
@@ -205,9 +223,11 @@ int main() {
 				addAntButton_6.move(-40.0f, 0);
 				spriteUpgrade.move(-40.0f, 0);
 				playersMoney.move(-40.0f, 0);
+				textUpgrade.move(-40.0f, 0);
 				castleLevel.move(-40.0f, 0);
 				spriteMute.move(-40.0f, 0);
 				spriteEggs.move(-40.0f, 0);
+				textMute.move(-40.0f, 0);
 			}
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
 				boundaryControl++;
@@ -221,9 +241,11 @@ int main() {
 				addAntButton_6.move(40.0f, 0);
 				spriteUpgrade.move(40.0f, 0);
 				playersMoney.move(40.0f, 0);
+				textUpgrade.move(40.0f, 0);
 				castleLevel.move(40.0f, 0);
 				spriteMute.move(40.0f, 0);
 				spriteEggs.move(40.0f, 0);
+				textMute.move(40.0f, 0);
 			}
 
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {		// pauzowanie gry po wciœniêciu klawisza ESC
@@ -352,7 +374,25 @@ int main() {
 					ourCastle->level += 1;
 					player->money -= 2000;
 				}
+				else if (spriteMute.getGlobalBounds().contains(translated_pos) && isMuted == false) {	// przycisk Mute
+					backgroundMusic.setVolume(0.f);
+					isMuted = true;
+					textMute.move(-15, 0);
+				}
+				else if (spriteMute.getGlobalBounds().contains(translated_pos) && isMuted == true) {	// przycisk Mute
+					backgroundMusic.setVolume(30.f);
+					isMuted = false;
+					textMute.move(15, 0);
+				}
 
+			}
+			if (isMuted == true) {
+				spriteMute.setTexture(textureUnmute);
+				textMute.setString("Unmute");
+			}
+			if (isMuted == false) {
+				spriteMute.setTexture(textureMute);
+				textMute.setString("Mute");
 			}
 
 		}
@@ -438,6 +478,8 @@ int main() {
 		window.draw(playersMoney);
 		window.draw(castleLevel);
 		window.draw(spriteMute);
+		window.draw(textUpgrade);
+		window.draw(textMute);
 
 		window.draw(addAntButton_1);		// te dwie mrówki gracz mo¿e zakupiæ od samego pocz¹tku gry
 		window.draw(addAntButton_2);
@@ -460,9 +502,10 @@ int main() {
 		if (ourCastle->level == 2) {		// Zmiana tekstury przycisku Upgrade po pierwszym ulepszeniu
 			spriteUpgrade.setTexture(textureUpgrade2);
 		}
-		if (ourCastle->level < 3) {			// Znikniecie przycisku Upgrade po drugim ulepszeniu
-			window.draw(spriteUpgrade);		// UPGRADE BUTTON
+		if (ourCastle->level == 3) {		// Zmiana tekstury przycisku Upgrade po pierwszym ulepszeniu
+			spriteUpgrade.setTexture(textureUpgradeDis);
 		}
+		window.draw(spriteUpgrade);			// UPGRADE BUTTON
 
 		//window.draw(ourCastle->rect);
 		//window.draw(opponentsCastle->rect);
