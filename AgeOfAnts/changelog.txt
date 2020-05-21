@@ -63,6 +63,7 @@ Klaudiusz Rozenek:
 Paweł Jakubowski:
 - zaimplementowanie animacji mrówek
 - modyfikacja klasy Lifebar i zaimplementowanie jej
+(w tym momencie praktycznie ukończyłem tworzenie całej niezbędnej mechaniki podczas rozgrywki)
 
 Mateusz Osinski + Mikolaj Sarnecki:
 - Stworzenie podstawy menu, 
@@ -142,6 +143,10 @@ Klaudiusz Rozenek:
 - Dodanie ikonek disabled dla menu zakupu mrówek
 - Dodanie ikonek dźwięku
 - Dodanie ikonek ulepszeń zamku
+
+Paweł Jakubowski:
+- wstępne prace nad AI przeciwnika
+- drobne modyfikacje napisanych wcześniej funkcji, aby możliwe stało się zaimplementowanie AI
 
 ----------------------------------------------------------------------------------------------------------------------------
 
