@@ -157,21 +157,19 @@ int main() {
 	backgroundMusic.setLoop(true);
 	backgroundMusic.setVolume(30.f);
 
-	//SoundBuffer hitBuffer;
-	//hitBuffer.loadFromFile("audio/hitSound.wav");
-	//Sound hitSound;
-	//hitSound.setBuffer(hitBuffer);
-	//hitSound.setLoop(true);
-	//hitSound.setVolume(120.f);
+	SoundBuffer hitBuffer;
+	hitBuffer.loadFromFile("audio/hitSound.wav");
+	Sound hitSound;
+	hitSound.setBuffer(hitBuffer);
+	hitSound.setLoop(true);
+	hitSound.setVolume(120.f);
+	hitSound.setMinDistance(0.5);
 
 	SoundBuffer deathBuffer;
 	deathBuffer.loadFromFile("audio/deathSound.wav");
 	Sound deathSound;
 	deathSound.setBuffer(deathBuffer);
 	deathSound.setVolume(120.f);
-	Sound deathSound2;
-	deathSound2.setBuffer(deathBuffer);
-	deathSound2.setVolume(120.f);
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA ZMIENNYCH / TABLIC -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -376,11 +374,15 @@ int main() {
 				}
 				else if (spriteMute.getGlobalBounds().contains(translated_pos) && isMuted == false) {	// przycisk Mute
 					backgroundMusic.setVolume(0.f);
+					deathSound.setVolume(0.f);
+					hitSound.setVolume(0.f);
 					isMuted = true;
 					textMute.move(-15, 0);
 				}
 				else if (spriteMute.getGlobalBounds().contains(translated_pos) && isMuted == true) {	// przycisk Mute
 					backgroundMusic.setVolume(30.f);
+					deathSound.setVolume(120.f);
+					hitSound.setVolume(120.f);
 					isMuted = false;
 					textMute.move(15, 0);
 				}
@@ -425,7 +427,6 @@ int main() {
 						opponents[i]->move();
 					}
 					else {							// zaatakuj przeciwnika
-						//deathSound.play();
 						if (i == 0) {				// jest to najstarsza mrówka - tylko ona mo¿e spotkaæ przeciwnika
 							if (!ants.empty()) {	// sprawdzenie, czy spotka³a przeciwnika, czy jego zamek
 								opponents[i]->attackOpponent(ants[0]);
