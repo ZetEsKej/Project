@@ -184,6 +184,8 @@ int main() {
 	bool isGamePaused = false;
 	bool isMuted = false;
 
+	int hitCounter = 0;				// licznik uderzeñ mrówki (do hitSound)
+
 	std::vector<Ant*> ants;			// tablica z wszystkimi mrówkami
 	std::vector<Lifebar*> antsLifebars;
 
@@ -317,10 +319,10 @@ int main() {
 
 					drawAnt = true;
 					if (player->money >= Ant::cost[3]) {								// gracz ma wystarczaj¹co du¿o pieniêdzy, by kupiæ mrówkê
-						ants.push_back(new Ant_l4(player));								// tworzenie mrówki
-						ants[ants.size() - 1]->sprite.setTexture(textureAnt[3]);
-						ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
-						antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
+						//ants.push_back(new Ant_l4(player));								// tworzenie mrówki
+						//ants[ants.size() - 1]->sprite.setTexture(textureAnt[3]);
+						//ants[ants.size() - 1]->sprite.setTextureRect(IntRect(0, 0, ants[ants.size() - 1]->width, ants[ants.size() - 1]->height));
+						//antsLifebars.push_back(new Lifebar(ants[ants.size() - 1]));
 
 
 						opponents.push_back(new Ant_l4(opponentPlayer));				// tworzenie mrówki przeciwnika
@@ -425,14 +427,32 @@ int main() {
 					if (opponents[i]->isMoving == true) {
 						opponents[i]->sprite.setTextureRect(IntRect(floor(opponents[i]->walkingCounter) * opponents[i]->width, 0, opponents[i]->width, opponents[i]->height));
 						opponents[i]->move();
+						if (i == 0) {
+							hitCounter = 0;
+							hitSound.stop();
+						}
 					}
 					else {							// zaatakuj przeciwnika
 						if (i == 0) {				// jest to najstarsza mrówka - tylko ona mo¿e spotkaæ przeciwnika
 							if (!ants.empty()) {	// sprawdzenie, czy spotka³a przeciwnika, czy jego zamek
 								opponents[i]->attackOpponent(ants[0]);
+								hitCounter++;
+								if (hitCounter == 1) {
+									hitSound.play();
+								}
+								if (hitCounter > 120) {
+									hitCounter = 0;
+								}
 							}
 							else {
 								opponents[i]->attackCastle(ourCastle);
+								hitCounter++;
+								if (hitCounter == 1) {
+									hitSound.play();
+								}
+								if (hitCounter > 120) {
+									hitCounter = 0;
+								}
 							}
 						}
 					}
@@ -445,6 +465,10 @@ int main() {
 					if (ants[i]->isMoving == true) {
 						ants[i]->sprite.setTextureRect(IntRect(floor(ants[i]->walkingCounter) * ants[i]->width, 0, ants[i]->width, ants[i]->height));
 						ants[i]->move();
+						if (i == 0) {
+							hitCounter = 0;
+							hitSound.stop();
+						}
 					}
 					else {								// zaatakuj przeciwnika
 						if (i == 0) {					// jest to najstarsza mrówka - tylko ona mo¿e spotkaæ przeciwnika
@@ -453,6 +477,13 @@ int main() {
 							}
 							else {
 								ants[i]->attackCastle(opponentsCastle);
+								hitCounter++;
+								if (hitCounter == 1) {
+									hitSound.play();
+								}
+								if (hitCounter > 120) {
+									hitCounter = 0;
+								}
 							}
 						}
 					}
