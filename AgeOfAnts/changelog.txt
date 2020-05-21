@@ -157,4 +157,7 @@ Jakub Stroiński:
 - Poprawienie funkcjonalności UI (podmian grafik)
 - Dodanie napisów przy przyciskach: Mute / Unmute / Upgrade castle
 
+Paweł Jakubowski + Jakub Stroiński:
+- Wprowadzenie w pełni funkcjonalnego systemu odtwarzania dźwięku ataku (mrówek i zamku)
+
 ----------------------------------------------------------------------------------------------------------------------------
