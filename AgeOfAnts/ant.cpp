@@ -76,12 +76,7 @@ public:
 
 		// poni¿ej obliczanie mo¿liwych zadanych obra¿eñ
 		float luck;
-		if (opponent->belongsToPlayer == false) {	// nasza mrówka atakuje
-			luck = Player::getLuck(1.0, 1.1);		// zadawane obra¿enia s¹ mno¿one przez wartoœæ z zakresu 0.9-1.1 -> szczêœcie
-		}
-		else {
-			luck = Player::getLuck(0.9, 1.1);
-		}
+		luck = Player::getLuck(0.9, 1.1);		// zadawane obra¿enia s¹ mno¿one przez wartoœæ z zakresu 0.9-1.1 -> szczêœcie
 
 		opponent->hp -= this->damage * luck;
 
@@ -175,10 +170,6 @@ public:
 		}
 		return AreDeads;
 	}
-
-	/*void showLifebar(Ant* ant) {
-
-	}*/
 
 	static int countPowerOfAnts(std::vector<Ant*> ants) {	// funkcja wylicza "si³ê" wszystkich jednostek po danej stronie, jest to potrzebne do AI
 

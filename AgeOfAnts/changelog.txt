@@ -161,3 +161,10 @@ Paweł Jakubowski + Jakub Stroiński:
 - Wprowadzenie w pełni funkcjonalnego systemu odtwarzania dźwięku ataku (mrówek i zamku)
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+22.05.2020:
+
+Paweł Jakubowski:
+- Ukończenie pracy nad AI przeciwnika
+- Poprawa drobnych błędów
+- Znaczna optymalizajca kodu w funkcji main(), szczególnie w sekcji kupowania mrówek
