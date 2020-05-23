@@ -1,3 +1,16 @@
+Udział w tworzeniu plików:
+- ant.cpp -> Paweł Jakubowski, Klaudiusz Rozenek 
+- ants.cpp -> Jakub Stroiński, Paweł Jakubowski, Klaudiusz Rozenek
+- castle.cpp -> Paweł Jakubowski
+- lifebar.cpp -> Kamil Szymkowiak, Paweł Jakubowski
+- main.cpp -> Jakub Stroiński, Paweł Jakubowski, Kamil Szymkowiak
+- object.cpp -> Paweł Jakubowski
+- player.cpp -> Paweł Jakubowski
+
+Udział w tworzeniu grafiki
+- Klaudiusz Rozenek
+- Paweł Jakubowski (tylko drobne poprawki, by zgrać niektóre elementy z kodem)
+
 09.05.2020:
 
 Paweł Jakubowski:
@@ -168,3 +181,11 @@ Paweł Jakubowski:
 - Ukończenie pracy nad AI przeciwnika
 - Poprawa drobnych błędów
 - Znaczna optymalizajca kodu w funkcji main(), szczególnie w sekcji kupowania mrówek
+
+----------------------------------------------------------------------------------------------------------------------------
+
+23.05.2020:
+
+Paweł Jakubowski:
+- Implemenacja systemy rozbudowy zamku przez przeciwnika
+- Naprawa animacji, poprawienie wymiarów mrówek
