@@ -1,6 +1,5 @@
 // main.cpp : Ten plik zawiera funkcjê „main”. W nim rozpoczyna siê i koñczy wykonywanie programu.
 //
-
 //#include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <vector>
@@ -185,6 +184,8 @@ int main() {
 	bool isMuted = false;
 
 	int hitCounter = 0;				// licznik uderzeñ mrówki (do hitSound)
+	int timeToLevel = 0.0;			// czas pomiêdzy updatem naszego zamku, a zamku przeciwnika (jest losowany w odpowiednim momencie)
+	int gameTime[3] = {0, 0, 0};			// czas, który up³yn¹³ od pocz¹tku gry (indeksy: 0 - minuty, 1 - sekundy, 2 - klatki (60 w ci¹gu sekundy))
 
 	std::vector<Ant*> ants;			// tablica z wszystkimi mrówkami
 	std::vector<Lifebar*> antsLifebars;
@@ -197,6 +198,8 @@ int main() {
 
 	bool drawAnt = false;
 	float addMoney = 0.0;			// wartoœæ do liczenia czasu (player dostaje dodatkowe jaja co jakiœ czas)
+
+	srand(time(NULL));
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- GAME LOOP -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -313,8 +316,8 @@ int main() {
 				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level == 1 && player->money >= 1000) {	// przycisk Upgrade lvl 2
 					ourCastle->level += 1;
 					player->money -= 1000;
-					opponentsCastle->level += 1;
-					opponentPlayer->money -= 1000;
+					//opponentsCastle->level += 1;
+					//opponentPlayer->money -= 1000;
 				}
 				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level == 2 && player->money >= 2000) {	// przycisk Upgrade lvl 3
 					ourCastle->level += 1;
@@ -383,7 +386,7 @@ int main() {
 
 					int opponentsAction = opponentPlayer->opponentsBuyingAction(ourPower, ants.size(), opponentsPower, opponents.size());		// co zamierza zrobiæ przeciwnik
 
-					std::cout << "Opponents action: " << opponentsAction << std::endl;
+					//std::cout << "Opponents action: " << opponentsAction << std::endl;
 
 					if (opponentsAction != 10) {										// przeciwnik zamierza kupiæ mrówkê
 
@@ -435,9 +438,18 @@ int main() {
 
 		if (!isGamePaused) {						// czy gra zosa³a spauzowana 
 
-			//if (ourCastle->level > opponentsCastle->level) {		// mamy lepszy zamek ni¿ przeciwnik -> trzeba bêdzie wyrównaæ w ci¹gu minuty, ¿eby rozgrywka by³a ciekawsza
+			gameTime[2]++;
+			if (gameTime[2] >= 60) {
+				gameTime[2] = 0;
+				gameTime[1]++;
+				if (gameTime[1] >= 60) {
+					gameTime[1] = 0;
+					gameTime[0]++;
+				}
+			}
 
-			//}
+	//		std::cout << "Czas: " << gameTime[0] << ":" << gameTime[1] << ":" << gameTime[2] << std::endl;			// wyœwietlanie czasu
+
 
 			addMoney += 0.50;
 			if (addMoney > 300) {					// player dostaje dodatkowe dziesiêæ jaj co dziesiêæ sekund
@@ -454,6 +466,32 @@ int main() {
 
 			playersMoney.setString(std::to_string(player->money));												// przypisanie do UI wartosci money z klasy player
 			castleLevel.setString("Castle level: " + std::to_string(ourCastle->level));							// przypisanie do UI wartosci level z klasy Castle
+
+			if (ourCastle->level > opponentsCastle->level) {		// mamy lepszy zamek ni¿ przeciwnik -> trzeba bêdzie wyrównaæ w ci¹gu +/- minuty, ¿eby rozgrywka by³a ciekawsza
+
+				if (timeToLevel <= 0) {								// 0 to wartoœæ domyœlna tej zmiennej -> jesteœmy tu pierwszy raz -> trzeba wylosowaæ czas do update'u zamku przeciwnika
+					timeToLevel = Player::getLuck(2500.0, 6000.0);	// ile przeciwnik musi poczekaæ na udpate swojego zamku
+				}
+				timeToLevel--;										// zmniejszanie czasu za ka¿dym razem (przeciwnik jest bli¿ej update'u)
+				if (timeToLevel <= 0) {
+					opponentsCastle->level += 1;
+					opponentPlayer->money -= 1000;
+					if (opponentPlayer->money < 0)	opponentPlayer->money = 0;			// przeciwnik nie jest na tyle m¹dry, ¿eby oszczêdzaæ na zamek, wiêc trzeba mu tutaj trochê pomóc
+					std::cout << "Opponent levelowa³ zamek!";
+				}
+			}
+			else if (gameTime[0] == 6 && opponentsCastle->level == 1) {					// minê³o ju¿ szeœæ minut, przeciwnik mo¿e zrobiæ update zamku, nawet jeœli my go nie zrobiliœmy
+				opponentsCastle->level += 1;
+				opponentPlayer->money -= 1000;
+				if (opponentPlayer->money < 0)	opponentPlayer->money = 0;			// przeciwnik nie jest na tyle m¹dry, ¿eby oszczêdzaæ na zamek, wiêc trzeba mu tutaj trochê pomóc
+				std::cout << "Opponent levelowa³ zamek!";
+			}	
+			else if (gameTime[0] == 12 && opponentsCastle->level == 1) {					// minê³o ju¿ dwanaœcie minut, przeciwnik mo¿e zrobiæ update zamku, nawet jeœli my go nie zrobiliœmy
+				opponentsCastle->level += 1;
+				opponentPlayer->money -= 2000;
+				if (opponentPlayer->money < 0)	opponentPlayer->money = 0;			// przeciwnik nie jest na tyle m¹dry, ¿eby oszczêdzaæ na zamek, wiêc trzeba mu tutaj trochê pomóc
+				std::cout << "Opponent levelowa³ zamek!";
+			}
 
 			if (drawAnt == true) {
 

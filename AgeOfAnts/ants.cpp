@@ -70,11 +70,11 @@ public:
 		hp = 3000.0;
 		movementSpeed = 2.4;
 		player->money -= cost[level - 1];		// zap³ata za mrówkê
-		width = 280;
+		width = 226;
 		height = 235;
 
 		rect.setSize(sf::Vector2f(width - 15, height));
-		sprite.setPosition(sprite.getPosition().x, 835 - height);
+		sprite.setPosition(sprite.getPosition().x, 920 - height);
 		rect.setPosition(sprite.getPosition());
 
 	}

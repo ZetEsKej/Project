@@ -42,7 +42,7 @@ public:
 
 		else {
 			belongsToPlayer = false;
-			sprite.setPosition(7000, 800);
+			sprite.setPosition(7000, 800);		// 7000
 			rect.setPosition(sprite.getPosition());
 		}
 
@@ -103,7 +103,7 @@ public:
 		if (this->belongsToPlayer) {					// mrówka nale¿y do gracza
 			for (int i = 0; i < allies.size(); i++) {
 				if (allies[i]->id < id) {			// sprawdzaj mrówki przed sob¹
-					if (allies[i]->rect.getPosition().x <= rect.getPosition().x + rect.getSize().x + 0.5) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
+					if (allies[i]->rect.getPosition().x <= rect.getPosition().x + rect.getSize().x - 15) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
 						if (allies[i]->id != id) {
 							return false;
 						}
@@ -112,7 +112,7 @@ public:
 				}
 			}
 			for (int i = 0; i < opponents.size(); i++) {
-				if (opponents[i]->rect.getPosition().x <= rect.getPosition().x + rect.getSize().x + 0.5) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
+				if (opponents[i]->rect.getPosition().x <= rect.getPosition().x + rect.getSize().x - 15) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
 					return false;
 				}
 			}
@@ -123,7 +123,7 @@ public:
 		else {			// mrówka nie nale¿y do gracza
 			for (int i = 0; i < opponents.size(); i++) {
 				if (opponents[i]->id < id) {			// sprawdzaj mrówki przed sob¹
-					if (opponents[i]->rect.getPosition().x + opponents[i]->rect.getSize().x >= rect.getPosition().x - 0.5) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
+					if (opponents[i]->rect.getPosition().x + opponents[i]->rect.getSize().x >= rect.getPosition().x + 15) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
 						if (opponents[i]->id != id) {
 							return false;
 						}
@@ -132,7 +132,7 @@ public:
 				}
 			}
 			for (int i = 0; i < allies.size(); i++) {
-				if (allies[i]->rect.getPosition().x + allies[i]->rect.getSize().x >= rect.getPosition().x - 0.5) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
+				if (allies[i]->rect.getPosition().x + allies[i]->rect.getSize().x >= rect.getPosition().x + 15) {		// mrówki s¹ bardzo blisko siebie lub wrêcz stykaj¹ siê ze sob¹
 					return false;
 				}
 			}

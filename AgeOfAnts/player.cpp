@@ -1,4 +1,6 @@
 #include "castle.cpp"
+#include <cstdlib>
+#include <ctime>
 
 class Player {
 
@@ -49,9 +51,11 @@ public:
 	}
 
 	static float getLuck(float a, float b) {				// metoda losuj¹ca szczêœcie przy zadawaniu obra¿eñ; 
-		float random = ((float)rand()) / (float)RAND_MAX;
+		
+		return ((b - a) * ((float)rand() / RAND_MAX)) + a;
+		/*float random = ((float)rand()) / (float)RAND_MAX;
 		float diff = b - a;
 		float r = random * diff;
-		return a + r;
+		return a + r;*/
 	}
 };
