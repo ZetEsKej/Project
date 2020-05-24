@@ -189,3 +189,13 @@ Paweł Jakubowski:
 Paweł Jakubowski:
 - Implemenacja systemy rozbudowy zamku przez przeciwnika
 - Naprawa animacji, poprawienie wymiarów mrówek
+
+----------------------------------------------------------------------------------------------------------------------------
+
+24.05.2020:
+
+Paweł Jakubowski:
+- Wykrycie i naprawa bugu z usuwaniem lifebarów mrówek
+- Kolejne modyfikacje klasy Lifebar (dodanie nowych parametrów)
+- Lekka zmiana zasady działania funkcji checkForDead() dotycząca działania lifebarów
+- Poprawa wyglądu lifebarów: wyśrodkowanie ich i wyrównanie
