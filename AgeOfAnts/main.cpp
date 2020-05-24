@@ -438,7 +438,7 @@ int main() {
 
 		if (!isGamePaused) {						// czy gra zosa³a spauzowana 
 
-			gameTime[2]++;
+			gameTime[2]++;							// aktualizacja globalnego czasu gry
 			if (gameTime[2] >= 60) {
 				gameTime[2] = 0;
 				gameTime[1]++;
@@ -460,6 +460,7 @@ int main() {
 			}
 
 			bool PlayDeathSound = Ant::checkForDead(ants, antsLifebars, opponentsLifebars, opponents, player, opponentPlayer);		// zobacz, czy s¹ jakieœ martwe mrówki do usuniêcia z mapy
+			
 			if (PlayDeathSound == true) {
 				deathSound.play();
 			}
@@ -498,11 +499,11 @@ int main() {
 				for (int i = 0; i < opponents.size(); i++) {
 					opponents[i]->isMoving = opponents[i]->checkForCollision(ants, opponents, ourCastle);
 					if (opponents[i]->isMoving == true) {
-						opponents[i]->sprite.setTextureRect(IntRect(floor(opponents[i]->walkingCounter) * opponents[i]->width, 0, opponents[i]->width, opponents[i]->height));
+						opponents[i]->sprite.setTextureRect(IntRect(floor(opponents[i]->walkingCounter) * opponents[i]->width, 0, opponents[i]->width, opponents[i]->height));		// animacja chodu mrówki
 						opponents[i]->move();
 						if (i == 0) {
 							hitCounter = 0;
-							hitSound.stop();
+							hitSound.stop();		// zatrzymanie dŸwiêku ataku mrówki
 						}
 					}
 					else {							// zaatakuj przeciwnika
@@ -521,7 +522,7 @@ int main() {
 								opponents[i]->attackCastle(ourCastle);
 								hitCounter++;
 								if (hitCounter == 1) {
-									hitSound.play();
+									hitSound.play();		// odtworzenie dŸwiêku ataku mrówki
 								}
 								if (hitCounter > 120) {
 									hitCounter = 0;
@@ -529,7 +530,7 @@ int main() {
 							}
 						}
 					}
-					opponentsLifebars[i]->updateLifebar(opponents[i]);
+					opponentsLifebars[i]->updateLifebar();
 					lifeBarCastle->updateLifebar(ourCastle);
 				}
 
@@ -560,7 +561,7 @@ int main() {
 							}
 						}
 					}
-					antsLifebars[i]->updateLifebar(ants[i]);
+					antsLifebars[i]->updateLifebar();
 					lifeBarOpponentCastle->updateLifebar(opponentsCastle);
 				}
 
@@ -593,8 +594,8 @@ int main() {
 		window.draw(addAntButton_5);
 		window.draw(addAntButton_6);
 
-		window.draw(lifeBarCastle->lifeBar_castle);
-		window.draw(lifeBarOpponentCastle->lifeBar_castle);
+		window.draw(lifeBarCastle->rect);
+		window.draw(lifeBarOpponentCastle->rect);
 
 		if (ourCastle->level >= 2) {		// Poziom oblokowuje 2 kolejne mrowki
 			addAntButton_3.setTexture(textureAdd_3);
