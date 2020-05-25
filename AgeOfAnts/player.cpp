@@ -1,3 +1,4 @@
+#pragma once
 #include "castle.cpp"
 #include <cstdlib>
 #include <ctime>

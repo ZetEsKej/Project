@@ -1,3 +1,4 @@
+#pragma once
 #include "object.cpp"
 
 class Castle : public Object {

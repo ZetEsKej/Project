@@ -1,3 +1,4 @@
+#pragma once
 #include "player.cpp"
 #include "audio.cpp"
 

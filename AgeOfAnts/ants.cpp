@@ -1,3 +1,4 @@
+#pragma once
 #include "ant.cpp"
 
 class Ant_l1 : public Ant { // melee 1 
