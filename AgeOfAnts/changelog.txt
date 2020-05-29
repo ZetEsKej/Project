@@ -206,4 +206,5 @@ Paweł Jakubowski:
 Mateusz Osiński :
 - znaczna poprawa menu - wygląd,
 - działające wyjście po naciśnięciu przycisku exit,
-- dodanie wejście audio + dodanie muzyki. 
+- dodanie wejście audio + dodanie muzyki,
+- praca nad state machine. 
