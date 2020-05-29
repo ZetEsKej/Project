@@ -199,3 +199,11 @@ Paweł Jakubowski:
 - Kolejne modyfikacje klasy Lifebar (dodanie nowych parametrów)
 - Lekka zmiana zasady działania funkcji checkForDead() dotycząca działania lifebarów
 - Poprawa wyglądu lifebarów: wyśrodkowanie ich i wyrównanie
+------------------------------------------------------------------------------------------------------------------------------
+
+29.05.2020
+
+Mateusz Osiński :
+- znaczna poprawa menu - wygląd,
+- działające wyjście po naciśnięciu przycisku exit,
+- dodanie wejście audio + dodanie muzyki. 
