@@ -12,14 +12,15 @@ public:
     WaterDrop(int positionX, int positionY) {
 		rect.setFillColor(sf::Color::Green);
 		rect.setPosition(positionX, positionY);
-        rect.setSize(sf::Vector2f(50, 100));
+		sprite.setPosition(rect.getPosition());
+        rect.setSize(sf::Vector2f(51, 100));
         damage = 1000.0;
         speed = 7.0;
 		isActive = true;
     }
 
     void move() {
-        //sprite.move(0, -speed);
+        sprite.move(0, speed);
 	    rect.move(0, speed);
     }
 
@@ -42,14 +43,11 @@ public:
                 if (leftBottomOfDrop[0] > leftTopOfAnt[0] && leftBottomOfDrop[0] < rightTopOfAnt[0] && leftBottomOfDrop[1] > leftTopOfAnt[1] && leftBottomOfDrop[1]) {
                     waterDrops[i]->dropDamage(ants[j]);
                     waterDrops[i]->isActive = false;
-					std::cout << "DMGGGG" << std::endl;
 
                 }
                 else if (rightBottomOfDrop[0] > leftTopOfAnt[0] && rightBottomOfDrop[0] < rightTopOfAnt[0] && rightBottomOfDrop[1] > leftTopOfAnt[1]) {
                     waterDrops[i]->dropDamage(ants[j]);
                     waterDrops[i]->isActive = false;
-					std::cout << "DMGGGG" << std::endl;
-
                 }
             }
 			if (leftBottomOfDrop[1] >= 1000)								// kropla doleciała do ziemi

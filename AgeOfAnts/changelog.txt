@@ -208,3 +208,17 @@ Mateusz Osiński :
 - działające wyjście po naciśnięciu przycisku exit,
 - dodanie wejście audio + dodanie muzyki,
 - praca nad state machine. 
+
+
+04.06.2020:
+
+Klaudiusz Rozenek:
+- zaprojektowanie i stworzenie tekstur deszczu
+- zaprojektowanie i stworzenie tekstur UI do systemu deszczu
+
+Paweł Jakubowski:
+- stworzenie systemu deszczu
+- implementacja systemu deszczu
+- graficzna implementacja deszczu z teksturami Klaudiusza
+- poprawki działania funkcji i wyglądu
+- usuwanie wyświetlana zbędnych informacji w konsoli

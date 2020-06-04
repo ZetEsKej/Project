@@ -91,7 +91,7 @@ public:
 
 		float luck = Player::getLuck(0.9, 1.1);
 		castle->hp -= this->damage * luck;		// zadawane obra¿enia s¹ mno¿one przez wartoœæ z zakresu 0.9-1.1 -> szczêœcie
-		std::cout << castle->hp << std::endl;
+		//std::cout << castle->hp << std::endl;
 		if (castle->hp < 0) {
 			castle->destroyCastle();
 		}

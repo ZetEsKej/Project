@@ -112,9 +112,6 @@ int main() {
 	Texture textureAdd_6_dis;
 	textureAdd_6_dis.loadFromFile("graphics/UI/UI_6_dis.png");
 
-	Texture rainButtonTexture;										// przycisk deszczu
-	rainButtonTexture.loadFromFile("graphics/UI/jajco.png");
-
 	Sprite addAntButton_1;
 	addAntButton_1.setTexture(textureAdd_1);
 	addAntButton_1.setPosition(50, 90);
@@ -139,11 +136,7 @@ int main() {
 	addAntButton_6.setTexture(textureAdd_6_dis);
 	addAntButton_6.setPosition(450, 90);
 
-	Sprite rainButton;
-	rainButton.setTexture(rainButtonTexture);
-	rainButton.setPosition(500, 44);
-
-	Texture textureAnt[12]; 			//Tworzenie tekstur mrowek
+	Texture textureAnt[12]; 								//Tworzenie tekstur mrowek
 	textureAnt[0].loadFromFile("graphics/animations/ant_ani_1.png");
 	textureAnt[1].loadFromFile("graphics/animations/ant_ani_2.png");
 	textureAnt[2].loadFromFile("graphics/animations/ant_ani_3.png");
@@ -156,6 +149,17 @@ int main() {
 	textureAnt[9].loadFromFile("graphics/enemy_animations/enemy_ani_4.png");
 	textureAnt[10].loadFromFile("graphics/enemy_animations/enemy_ani_5.png");
 	textureAnt[11].loadFromFile("graphics/enemy_animations/enemy_ani_6.png");
+
+	Texture rainButtonTexture;									
+	rainButtonTexture.loadFromFile("graphics/UI/UI_kropla.png");	
+	Texture rainButtonTexture_dis;									
+	rainButtonTexture_dis.loadFromFile("graphics/UI/UI_kropla_dis.png");
+	Sprite rainButton;										// przycisk deszczu
+	rainButton.setTexture(rainButtonTexture_dis);
+	rainButton.setPosition(550, 44);
+
+	Texture waterDropTexture;
+	waterDropTexture.loadFromFile("graphics/UI/kropla.png");
 
 	/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- SEKCJA AUDIO -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -250,7 +254,7 @@ int main() {
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
 				boundaryControl++;
 				view.move(40.0f, 0.f); // predkosc przesuwania
-				std::cout << boundaryControl << std::endl;
+				//std::cout << boundaryControl << std::endl;
 				addAntButton_1.move(40.0f, 0);
 				addAntButton_2.move(40.0f, 0);
 				addAntButton_3.move(40.0f, 0);
@@ -356,7 +360,7 @@ int main() {
 					else 
 						rain = false;
 				}
-				else if (rain == true) {																// gracz wybra³ miejsce, gdzie ma spaœæ deszcz
+				else if (rain == true) {															// gracz wybra³ miejsce, gdzie ma spaœæ deszcz
 					
 					int howManyDrops = int(Player::getLuck(8.0, 15.0));
 
@@ -364,12 +368,14 @@ int main() {
 						int positionX = int(Player::getLuck(translated_pos.x - 500, translated_pos.x + 500));
 						int positionY = int(Player::getLuck(-800, 0));
 						waterDrops.push_back(new WaterDrop(positionX, positionY));
+						waterDrops[waterDrops.size()-1]->sprite.setTexture(waterDropTexture);
 					}
 					rain = false;
 					isRainAvailable = false;
+					rainButton.setTexture(rainButtonTexture_dis);
 				}
 
-				if (didPlayerBuyAnt == true) {										// gracz zakupi³ mrówkê -> przeciwnik musi odpowiedzieæ
+				if (didPlayerBuyAnt == true) {														// gracz zakupi³ mrówkê -> przeciwnik musi odpowiedzieæ
 										
 					/* -- -- -- -- -- -- -- -- -- -- SEKCJA GRACZA KUPUJ¥CEGO MRÓWKÊ -- -- -- -- -- -- -- -- -- --*/
 
@@ -477,10 +483,10 @@ int main() {
 				}
 			}
 
-			if (gameTime[0]%2 == 0 && gameTime[1] == 0 && gameTime[2] == 0) {						// druga minuta gry, mo¿na 
+			if (gameTime[0] % 2 == 0 && gameTime[1] == 0 && gameTime[2] == 0) {						// druga minuta gry, mo¿na 
 				isRainAvailable = true;
+				rainButton.setTexture(rainButtonTexture);
 			}
-
 	//		std::cout << "Czas: " << gameTime[0] << ":" << gameTime[1] << ":" << gameTime[2] << std::endl;			// wyœwietlanie czasu
 
 
@@ -672,8 +678,8 @@ int main() {
 				//window.draw(opponents[i]->rect);			//Rysowanie kolizji mrówek
 			}
 			for (int i = 0; i < waterDrops.size(); i++) {	// rysowanie kropel wody
-				//window.draw(waterDrops[i]->sprite);
-				window.draw(waterDrops[i]->rect);
+				window.draw(waterDrops[i]->sprite);
+				//window.draw(waterDrops[i]->rect);
 			}
 
 		}
