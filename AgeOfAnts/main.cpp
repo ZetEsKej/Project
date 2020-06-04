@@ -7,6 +7,7 @@
 #include "lifebar.cpp"
 #include <math.h>
 #include <string>
+#include "rain.cpp"
 
 using namespace sf;
 
@@ -111,6 +112,9 @@ int main() {
 	Texture textureAdd_6_dis;
 	textureAdd_6_dis.loadFromFile("graphics/UI/UI_6_dis.png");
 
+	Texture rainButtonTexture;										// przycisk deszczu
+	rainButtonTexture.loadFromFile("graphics/UI/jajco.png");
+
 	Sprite addAntButton_1;
 	addAntButton_1.setTexture(textureAdd_1);
 	addAntButton_1.setPosition(50, 90);
@@ -134,6 +138,10 @@ int main() {
 	Sprite addAntButton_6;
 	addAntButton_6.setTexture(textureAdd_6_dis);
 	addAntButton_6.setPosition(450, 90);
+
+	Sprite rainButton;
+	rainButton.setTexture(rainButtonTexture);
+	rainButton.setPosition(500, 44);
 
 	Texture textureAnt[12]; 			//Tworzenie tekstur mrowek
 	textureAnt[0].loadFromFile("graphics/animations/ant_ani_1.png");
@@ -192,12 +200,15 @@ int main() {
 
 	std::vector<Ant*> opponents;	// tablica z wrogimi mrówkami
 	std::vector<Lifebar*> opponentsLifebars;
+	std::vector<WaterDrop*> waterDrops;
 
 	Lifebar* lifeBarCastle = new Lifebar(ourCastle);	//pasek zdrowia zamku gracza
 	Lifebar* lifeBarOpponentCastle = new Lifebar(opponentsCastle);
 
 	bool drawAnt = false;
 	float addMoney = 0.0;			// wartoœæ do liczenia czasu (player dostaje dodatkowe jaja co jakiœ czas)
+
+	bool rain = false;						// czy gracz klikna³ na ikonkê deszczu -> mo¿e wtedy wybraæ miesjce, gdzie deszcz uderzy
 
 	srand(time(NULL));
 
@@ -233,6 +244,7 @@ int main() {
 				spriteMute.move(-40.0f, 0);
 				spriteEggs.move(-40.0f, 0);
 				textMute.move(-40.0f, 0);
+				rainButton.move(-40.0f, 0);
 			}
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
 				boundaryControl++;
@@ -251,6 +263,7 @@ int main() {
 				spriteMute.move(40.0f, 0);
 				spriteEggs.move(40.0f, 0);
 				textMute.move(40.0f, 0);
+				rainButton.move(40.0f, 0);
 			}
 
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {		// pauzowanie gry po wciœniêciu klawisza ESC
@@ -322,8 +335,8 @@ int main() {
 				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level == 2 && player->money >= 2000) {	// przycisk Upgrade lvl 3
 					ourCastle->level += 1;
 					player->money -= 2000;
-					opponentsCastle->level += 1;
-					opponentPlayer->money -= 2000;
+					//opponentsCastle->level += 1;
+					//opponentPlayer->money -= 2000;
 				}
 				else if (spriteMute.getGlobalBounds().contains(translated_pos) && isMuted == false) {	// przycisk Mute
 					backgroundMusic.setVolume(0.f);
@@ -338,6 +351,29 @@ int main() {
 					hitSound.setVolume(120.f);
 					isMuted = false;
 					textMute.move(15, 0);
+				}				
+				else if (rainButton.getGlobalBounds().contains(translated_pos)) {						// przycisk deszczu
+
+					if (rain == false) 
+						rain = true;
+					else 
+						rain = false;
+				}
+				else if (rain == true) {																// gracz wybra³ miejsce, gdzie ma spaœæ deszcz
+					
+					int howManyDrops = int(Player::getLuck(8.0, 15.0));
+
+					std::cout << "           " << translated_pos.x << std::endl;
+
+					for (int i = 0; i < howManyDrops; i++) {
+						int positionX = int(Player::getLuck(translated_pos.x - 500, translated_pos.x + 500));
+						int positionY = int(Player::getLuck(-800, 0));
+						waterDrops.push_back(new WaterDrop(positionX, positionY));
+					}
+				/*	waterDrops.push_back(new WaterDrop(6200));
+					waterDrops.push_back(new WaterDrop(6400));
+					waterDrops.push_back(new WaterDrop(6600));*/
+					rain = false;
 				}
 
 				if (didPlayerBuyAnt == true) {										// gracz zakupi³ mrówkê -> przeciwnik musi odpowiedzieæ
@@ -496,6 +532,13 @@ int main() {
 
 			if (drawAnt == true) {
 
+				for (int i = 0; i < waterDrops.size(); i++)							// poruszanie kropel wody
+					waterDrops[i]->move();
+
+				if (waterDrops.size() > 0) {
+					WaterDrop::rainCheckForCollision(opponents, waterDrops);        // sprawdzanie kolizji mrówek z kroplami wody i ew. zadawanie obra¿eñ
+					WaterDrop::checkForInactive(waterDrops);
+				}
 				for (int i = 0; i < opponents.size(); i++) {
 					opponents[i]->isMoving = opponents[i]->checkForCollision(ants, opponents, ourCastle);
 					if (opponents[i]->isMoving == true) {
@@ -594,6 +637,8 @@ int main() {
 		window.draw(addAntButton_5);
 		window.draw(addAntButton_6);
 
+		window.draw(rainButton);		
+
 		window.draw(lifeBarCastle->rect);
 		window.draw(lifeBarOpponentCastle->rect);
 
@@ -627,6 +672,11 @@ int main() {
 				window.draw(opponentsLifebars[i]->rect);
 				//window.draw(opponents[i]->rect);			//Rysowanie kolizji mrówek
 			}
+			for (int i = 0; i < waterDrops.size(); i++) {	// rysowanie kropel wody
+				//window.draw(waterDrops[i]->sprite);
+				window.draw(waterDrops[i]->rect);
+			}
+
 		}
 
 		window.display();									//Pokaz wszystko, co narysowaliœmy
