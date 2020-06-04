@@ -193,7 +193,7 @@ int main() {
 
 	int hitCounter = 0;				// licznik uderzeñ mrówki (do hitSound)
 	int timeToLevel = 0.0;			// czas pomiêdzy updatem naszego zamku, a zamku przeciwnika (jest losowany w odpowiednim momencie)
-	int gameTime[3] = {0, 0, 0};			// czas, który up³yn¹³ od pocz¹tku gry (indeksy: 0 - minuty, 1 - sekundy, 2 - klatki (60 w ci¹gu sekundy))
+	int gameTime[3] = {0, 0, 0};	// czas, który up³yn¹³ od pocz¹tku gry (indeksy: 0 - minuty, 1 - sekundy, 2 - klatki (60 w ci¹gu sekundy))
 
 	std::vector<Ant*> ants;			// tablica z wszystkimi mrówkami
 	std::vector<Lifebar*> antsLifebars;
@@ -209,6 +209,7 @@ int main() {
 	float addMoney = 0.0;			// wartoœæ do liczenia czasu (player dostaje dodatkowe jaja co jakiœ czas)
 
 	bool rain = false;						// czy gracz klikna³ na ikonkê deszczu -> mo¿e wtedy wybraæ miesjce, gdzie deszcz uderzy
+	bool isRainAvailable = false;
 
 	srand(time(NULL));
 
@@ -329,14 +330,10 @@ int main() {
 				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level == 1 && player->money >= 1000) {	// przycisk Upgrade lvl 2
 					ourCastle->level += 1;
 					player->money -= 1000;
-					//opponentsCastle->level += 1;
-					//opponentPlayer->money -= 1000;
 				}
 				else if (spriteUpgrade.getGlobalBounds().contains(translated_pos) && ourCastle->level == 2 && player->money >= 2000) {	// przycisk Upgrade lvl 3
 					ourCastle->level += 1;
 					player->money -= 2000;
-					//opponentsCastle->level += 1;
-					//opponentPlayer->money -= 2000;
 				}
 				else if (spriteMute.getGlobalBounds().contains(translated_pos) && isMuted == false) {	// przycisk Mute
 					backgroundMusic.setVolume(0.f);
@@ -352,7 +349,7 @@ int main() {
 					isMuted = false;
 					textMute.move(15, 0);
 				}				
-				else if (rainButton.getGlobalBounds().contains(translated_pos)) {						// przycisk deszczu
+				else if (rainButton.getGlobalBounds().contains(translated_pos) && isRainAvailable == true) {						// przycisk deszczu
 
 					if (rain == false) 
 						rain = true;
@@ -363,17 +360,13 @@ int main() {
 					
 					int howManyDrops = int(Player::getLuck(8.0, 15.0));
 
-					std::cout << "           " << translated_pos.x << std::endl;
-
 					for (int i = 0; i < howManyDrops; i++) {
 						int positionX = int(Player::getLuck(translated_pos.x - 500, translated_pos.x + 500));
 						int positionY = int(Player::getLuck(-800, 0));
 						waterDrops.push_back(new WaterDrop(positionX, positionY));
 					}
-				/*	waterDrops.push_back(new WaterDrop(6200));
-					waterDrops.push_back(new WaterDrop(6400));
-					waterDrops.push_back(new WaterDrop(6600));*/
 					rain = false;
+					isRainAvailable = false;
 				}
 
 				if (didPlayerBuyAnt == true) {										// gracz zakupi³ mrówkê -> przeciwnik musi odpowiedzieæ
@@ -484,6 +477,10 @@ int main() {
 				}
 			}
 
+			if (gameTime[0]%2 == 0 && gameTime[1] == 0 && gameTime[2] == 0) {						// druga minuta gry, mo¿na 
+				isRainAvailable = true;
+			}
+
 	//		std::cout << "Czas: " << gameTime[0] << ":" << gameTime[1] << ":" << gameTime[2] << std::endl;			// wyœwietlanie czasu
 
 
@@ -504,6 +501,8 @@ int main() {
 			playersMoney.setString(std::to_string(player->money));												// przypisanie do UI wartosci money z klasy player
 			castleLevel.setString("Castle level: " + std::to_string(ourCastle->level));							// przypisanie do UI wartosci level z klasy Castle
 
+			
+
 			if (ourCastle->level > opponentsCastle->level) {		// mamy lepszy zamek ni¿ przeciwnik -> trzeba bêdzie wyrównaæ w ci¹gu +/- minuty, ¿eby rozgrywka by³a ciekawsza
 
 				if (timeToLevel <= 0) {								// 0 to wartoœæ domyœlna tej zmiennej -> jesteœmy tu pierwszy raz -> trzeba wylosowaæ czas do update'u zamku przeciwnika
@@ -523,7 +522,7 @@ int main() {
 				if (opponentPlayer->money < 0)	opponentPlayer->money = 0;			// przeciwnik nie jest na tyle m¹dry, ¿eby oszczêdzaæ na zamek, wiêc trzeba mu tutaj trochê pomóc
 				std::cout << "Opponent levelowa³ zamek!";
 			}	
-			else if (gameTime[0] == 12 && opponentsCastle->level == 1) {					// minê³o ju¿ dwanaœcie minut, przeciwnik mo¿e zrobiæ update zamku, nawet jeœli my go nie zrobiliœmy
+			else if (gameTime[0] == 12 && opponentsCastle->level == 2) {					// minê³o ju¿ dwanaœcie minut, przeciwnik mo¿e zrobiæ update zamku, nawet jeœli my go nie zrobiliœmy
 				opponentsCastle->level += 1;
 				opponentPlayer->money -= 2000;
 				if (opponentPlayer->money < 0)	opponentPlayer->money = 0;			// przeciwnik nie jest na tyle m¹dry, ¿eby oszczêdzaæ na zamek, wiêc trzeba mu tutaj trochê pomóc
