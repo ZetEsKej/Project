@@ -222,3 +222,8 @@ Paweł Jakubowski:
 - graficzna implementacja deszczu z teksturami Klaudiusza
 - poprawki działania funkcji i wyglądu
 - usuwanie wyświetlana zbędnych informacji w konsoli
+
+05.06.2020
+Kamil Szymkowiak:
+-wyłączenie obsługi przycisków podczas pauzy(na razie zostawiłem przesuwanie kamery)
+-Tekst PAUSED!!! kiedy gra jest spauzowana
