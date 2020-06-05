@@ -73,6 +73,15 @@ int main() {
 	textMute.setOutlineColor(sf::Color::Black);
 	textMute.setPosition(1823, 105);
 
+	Text textPause("Paused!", font);								// Tekst Pause
+	textPause.setCharacterSize(50);
+	textPause.setStyle(sf::Text::Bold);
+	textPause.setFillColor(sf::Color::White);
+	textPause.setOutlineThickness(2);
+	textPause.setOutlineColor(sf::Color::Black);
+	textPause.setPosition(900, 900);
+
+
 	Texture textureUpgrade1;									// Przyciski UPGRADE
 	Texture textureUpgrade2;
 	Texture textureUpgradeDis;
@@ -250,6 +259,7 @@ int main() {
 				spriteEggs.move(-40.0f, 0);
 				textMute.move(-40.0f, 0);
 				rainButton.move(-40.0f, 0);
+				textPause(-40.0f, 0);
 			}
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
 				boundaryControl++;
@@ -269,6 +279,7 @@ int main() {
 				spriteEggs.move(40.0f, 0);
 				textMute.move(40.0f, 0);
 				rainButton.move(40.0f, 0);
+				textPause(40.0f, 0);
 			}
 
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {		// pauzowanie gry po wciœniêciu klawisza ESC
@@ -285,7 +296,7 @@ int main() {
 			bool didPlayerBuyAnt = false;
 			int whatAntPlayerBought = 10;
 
-			if (event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Left) {	// klikniêcie LPM
+			if (event.type == Event::MouseButtonPressed && event.mouseButton.button == Mouse::Left && !isGamePaused) {	// klikniêcie LPM
 
 				auto mouse_pos = Mouse::getPosition(window);							// pozcja myszki wzglêdem okna
 				auto translated_pos = window.mapPixelToCoords(mouse_pos);				// pozycja myszki w koordynatach globalnych
@@ -663,6 +674,8 @@ int main() {
 		}
 		window.draw(spriteUpgrade);			// UPGRADE BUTTON
 
+		if (isGamePaused)			//tekst paused
+			window.draw(textPause);
 		//window.draw(ourCastle->rect);
 		//window.draw(opponentsCastle->rect);
 
