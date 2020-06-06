@@ -58,7 +58,7 @@ Paweł Jakubowski:
 
 Mateusz Osinski + Mikolaj Sarnecki:
 - Tworzenie menu 
-- Dodawanie klas + pomysl na nie
+- Dodawanie klas + pomysl na nie (menu)
 
 Jakub Stroiński:
 - Zbudowanie od zera pełnej kamery 2D z obsługiwaniem granic ekranu
@@ -175,7 +175,7 @@ Paweł Jakubowski + Jakub Stroiński:
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-22.05.2020:
+22.05.2020
 
 Paweł Jakubowski:
 - Ukończenie pracy nad AI przeciwnika
@@ -184,7 +184,7 @@ Paweł Jakubowski:
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-23.05.2020:
+23.05.2020
 
 Paweł Jakubowski:
 - Implemenacja systemy rozbudowy zamku przez przeciwnika
@@ -192,13 +192,14 @@ Paweł Jakubowski:
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-24.05.2020:
+24.05.2020
 
 Paweł Jakubowski:
 - Wykrycie i naprawa bugu z usuwaniem lifebarów mrówek
 - Kolejne modyfikacje klasy Lifebar (dodanie nowych parametrów)
 - Lekka zmiana zasady działania funkcji checkForDead() dotycząca działania lifebarów
 - Poprawa wyglądu lifebarów: wyśrodkowanie ich i wyrównanie
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 29.05.2020
@@ -209,8 +210,9 @@ Mateusz Osiński :
 - dodanie wejście audio + dodanie muzyki,
 - praca nad state machine. 
 
+------------------------------------------------------------------------------------------------------------------------------
 
-04.06.2020:
+04.06.2020
 
 Klaudiusz Rozenek:
 - zaprojektowanie i stworzenie tekstur deszczu
@@ -223,11 +225,19 @@ Paweł Jakubowski:
 - poprawki działania funkcji i wyglądu
 - usuwanie wyświetlana zbędnych informacji w konsoli
 
+------------------------------------------------------------------------------------------------------------------------------
+
 05.06.2020
+
 Kamil Szymkowiak:
--wyłączenie obsługi przycisków podczas pauzy(na razie zostawiłem przesuwanie kamery)
--Tekst PAUSED!!! kiedy gra jest spauzowana
+- wyłączenie obsługi przycisków podczas pauzy(na razie zostawiłem przesuwanie kamery)
+- Tekst PAUSED!!! kiedy gra jest spauzowana
+
+------------------------------------------------------------------------------------------------------------------------------
 
 06.06.2020
+
 Kamil Szymkowiak:
--poruszanie napisu Paused powinno teraz działać
+- poruszanie napisu Paused powinno teraz działać
+
+------------------------------------------------------------------------------------------------------------------------------
