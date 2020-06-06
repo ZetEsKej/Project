@@ -227,3 +227,7 @@ Paweł Jakubowski:
 Kamil Szymkowiak:
 -wyłączenie obsługi przycisków podczas pauzy(na razie zostawiłem przesuwanie kamery)
 -Tekst PAUSED!!! kiedy gra jest spauzowana
+
+06.06.2020
+Kamil Szymkowiak:
+-poruszanie napisu Paused powinno teraz działać

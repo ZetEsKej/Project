@@ -259,7 +259,7 @@ int main() {
 				spriteEggs.move(-40.0f, 0);
 				textMute.move(-40.0f, 0);
 				rainButton.move(-40.0f, 0);
-				textPause(-40.0f, 0);
+				textPause.move(-40.0f, 0);
 			}
 			else if ((event.type == Event::KeyPressed && event.key.code == Keyboard::Right && boundaryControl < 143) || (event.type == Event::KeyPressed && event.key.code == Keyboard::D && boundaryControl < 143)) {
 				boundaryControl++;
@@ -279,7 +279,7 @@ int main() {
 				spriteEggs.move(40.0f, 0);
 				textMute.move(40.0f, 0);
 				rainButton.move(40.0f, 0);
-				textPause(40.0f, 0);
+				textPause.move(40.0f, 0);
 			}
 
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {		// pauzowanie gry po wciœniêciu klawisza ESC
