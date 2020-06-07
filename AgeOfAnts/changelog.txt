@@ -266,3 +266,5 @@ Kamil Szymkowiak:
 07.06.2020
 
 - Połączenie menu z grą
+Kamil Szymkowiak:
+-Rozkład na pliki cpp i pliki nagłówkowe

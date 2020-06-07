@@ -1,5 +1,5 @@
 #pragma once
-#include "ant.cpp"
+#include "ant.h"
 
 class Ant_l1 : public Ant { // melee 1 
 

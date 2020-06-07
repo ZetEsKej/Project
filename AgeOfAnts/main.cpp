@@ -4,10 +4,10 @@
 #include <SFML/Audio.hpp>
 #include <vector>
 //#include <iostream>
-#include "lifebar.cpp"
+#include "lifebar.h"
 #include <math.h>
 #include <string>
-#include "rain.cpp"
+#include "rain.h"
 
 using namespace sf;
 

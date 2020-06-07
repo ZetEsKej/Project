@@ -1,24 +1,16 @@
 #pragma once
-#include "castle.cpp"
-#include <cstdlib>
-#include <ctime>
+#include "player.h"
 
-class Player {
 
-public:
-	int money;
-	//int score;
-	bool isHuman;				// czy Player to gracz, czy komputer
-	Castle* castle;				// zamek gracza
 
-	Player(bool _isHuman, Castle* _castle) {		// konstruktor
+	Player::Player(bool _isHuman, Castle* _castle) {		// konstruktor
 		isHuman = _isHuman;
 		money = 100;
 		castle = _castle;
 		//score = 0;
 	}
 
-	int opponentsBuyingAction(unsigned int powerOfAllies, int numberOfAllies, unsigned int powerOfOpponents, int numberOfOpponents) {		// jak¹ mrówkê kupi przeciwnik po tym jak my kupimy mrówkê
+	int Player::opponentsBuyingAction(unsigned int powerOfAllies, int numberOfAllies, unsigned int powerOfOpponents, int numberOfOpponents) {		// jak¹ mrówkê kupi przeciwnik po tym jak my kupimy mrówkê
 
 		// analiza sytuacji na mapie i finansów (jeszcze nie wp³ywa na nic - work in progress)
 
@@ -50,13 +42,3 @@ public:
 
 		}
 	}
-
-	static float getLuck(float a, float b) {				// metoda losuj¹ca szczêœcie przy zadawaniu obra¿eñ; 
-		
-		return ((b - a) * ((float)rand() / RAND_MAX)) + a;
-		/*float random = ((float)rand()) / (float)RAND_MAX;
-		float diff = b - a;
-		float r = random * diff;
-		return a + r;*/
-	}
-};

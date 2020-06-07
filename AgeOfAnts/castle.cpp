@@ -1,13 +1,6 @@
-#pragma once
-#include "object.cpp"
+#include "Castle.h"
 
-class Castle : public Object {
-
-public:
-	int level;						// poziom rozbudowy zamku
-	float hp;						// wytrzyma³oœæ zamku
-
-	Castle(bool isPlayer) {			// isPlayer - czy zamek nale¿y do gracza (wtedy ustawia inn¹ pozycjê startow¹)
+	Castle::Castle(bool isPlayer) {			// isPlayer - czy zamek nale¿y do gracza (wtedy ustawia inn¹ pozycjê startow¹)
 		level = 1;
 		hp = 100000;
 
@@ -21,13 +14,3 @@ public:
 			rect.setPosition(7050, 800);	// 7000
 		}
 	}
-
-	void updateCastle() {			// podniesienie poziomu zamku
-		level += 1;
-	}
-
-	void destroyCastle() {			// zniszczenie zamku - koniec gry
-		std::cout << "Koniec gry!" << std::endl;
-		// tutaj trzeba bêdzie ogarn¹æ coœ, co siê stanie na koniec gry
-	}
-};
