@@ -260,11 +260,20 @@ Mateusz Osiński:
 Kamil Szymkowiak:
 - poruszanie napisu Paused powinno teraz działać
 
+Mateusz Osiński/Mikołaj Sarnecki:
+ 
+- dołączenie State - settings + credits (credits zostało przeniesione na konsole, a settingsy są tymczasowo wyłączone - problem z inną rzeczą) 
+- działające przechodzenie między różnymi częściami Menu,
+- działający Escape 
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 
 07.06.2020
 
-- Połączenie menu z grą
+Mateusz Osiński, Mikołaj Sarnecki, Kamil Szymkowiak, Jakub Stroiński:
+- Połączenie menu z grą : 
+
+
 Kamil Szymkowiak:
 -Rozkład na pliki cpp i pliki nagłówkowe
