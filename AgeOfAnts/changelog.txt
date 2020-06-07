@@ -6,12 +6,21 @@ Udział w tworzeniu plików:
 - main.cpp -> Jakub Stroiński, Paweł Jakubowski, Kamil Szymkowiak
 - object.cpp -> Paweł Jakubowski
 - player.cpp -> Paweł Jakubowski
-
+- Main_menu.cpp -> Mateusz Osiński, Mikołaj Sarnecki
+- Main_menu.h -> Mateusz Osiński, Mikołaj Sarnecki 
+- Main_menu_Ants.cpp - Mateusz Osiński 
 Udział w tworzeniu grafiki
 - Klaudiusz Rozenek
 - Paweł Jakubowski (tylko drobne poprawki, by zgrać niektóre elementy z kodem)
+30.04.2020:
 
+Paweł Jakubowski, Jakub Stroiński, Kamil Szymkowiak, Mateusz Osiński, Klaudiusz Rozenek, Mikołaj Sarnecki 
+- obmysł nad projektem - wymyślenie zasad oraz działaności 
+
+---------------------------------------------------------------------------------------------------------------------------
 09.05.2020:
+
+ 
 
 Paweł Jakubowski:
 - naprawienie wyświetlania okna na ekranie (nie crashuje po kilukrotnym kliknięciu myszką)
@@ -80,7 +89,7 @@ Paweł Jakubowski:
 
 Mateusz Osinski + Mikolaj Sarnecki:
 - Stworzenie podstawy menu, 
-- Dodanie mozliwosci wyboru + ruszanie strzalkami 
+- Dodanie mozliwosci wyboru + ruszanie strzalkami (jest do tego stworzona klasa oraz konstruktora/metod)
 
 Klaudiusz Rozenek:
 - Dodano motywu menu
@@ -161,6 +170,9 @@ Paweł Jakubowski:
 - wstępne prace nad AI przeciwnika
 - drobne modyfikacje napisanych wcześniej funkcji, aby możliwe stało się zaimplementowanie AI
 
+Mateusz Osiński:
+-usprawnienie działania menu.
+
 ----------------------------------------------------------------------------------------------------------------------------
 
 21.05.2020
@@ -204,14 +216,18 @@ Paweł Jakubowski:
 
 29.05.2020
 
-Mateusz Osiński :
+Mateusz Osiński/Mikołaj Sarnecki  :
 - znaczna poprawa menu - wygląd,
 - działające wyjście po naciśnięciu przycisku exit,
 - dodanie wejście audio + dodanie muzyki,
 - praca nad state machine. 
 
 ------------------------------------------------------------------------------------------------------------------------------
+03.06.2020
 
+Mateysz Osiński/Mikołaj Sarnecki:
+- Dodanie Credits do menu
+------------------------------------------------------------------------------------------------------------------------------
 04.06.2020
 
 Klaudiusz Rozenek:
@@ -233,6 +249,10 @@ Kamil Szymkowiak:
 - wyłączenie obsługi przycisków podczas pauzy(na razie zostawiłem przesuwanie kamery)
 - Tekst PAUSED!!! kiedy gra jest spauzowana
 
+Mateusz Osiński:
+- dodanie enum - miejsca na state,
+- praca nad zadziałaniem stateow. 
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 06.06.2020
@@ -241,3 +261,8 @@ Kamil Szymkowiak:
 - poruszanie napisu Paused powinno teraz działać
 
 ------------------------------------------------------------------------------------------------------------------------------
+
+
+07.06.2020
+
+- Połączenie menu z grą
